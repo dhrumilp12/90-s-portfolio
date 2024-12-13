@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 class="blink"><font face="Comic Sans MS">Guestbook</font></h1>
+
+<p>
+    <font face="Comic Sans MS">
+    Leave a message and let me know you stopped by!
+    </font>
+</p>
+
+<form action="{{ url_for('guestbook') }}" method="POST" style="font-family:'Comic Sans MS'; color:#00FF00;">
+    <p>
+        <label>Your Name: <input type="text" name="name" placeholder="e.g. 'CoolSurfer123'"></label>
+    </p>
+    <p>
+        <textarea name="message" rows="5" cols="40" placeholder="Your radical message here..."></textarea>
+    </p>
+    <p>
+        <input type="submit" value="Sign Guestbook" style="background:#FF00FF; color:#00FF00; border:2px solid #00FFFF;">
+    </p>
+</form>
+
+<hr>
+
+{% if entries %}
+    <h3><font face="Comic Sans MS">Previous Entries:</font></h3>
+    <ul>
+    {% for name, msg in entries %}
+        <li>
+            <font face="Comic Sans MS"><b>{{ name }}</b> says: <i>{{ msg }}</i></font>
+        </li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p><font face="Comic Sans MS">No entries yet! Be the first to leave a note!</font></p>
+{% endif %}
+{% endblock %}

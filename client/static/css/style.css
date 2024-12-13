@@ -1,0 +1,29 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 5px;
+}
+
+/* Links: Pink default, Yellow hover, very neon */
+a {
+    color: #FF00FF;
+}
+a:hover {
+    color: #FFFF00;
+}
+
+/* Retro look for form elements */
+input[type="text"], textarea {
+    background-color: #000000;
+    color: #00FF00;
+    border: 2px solid #FF00FF;
+    font-family: "Comic Sans MS", sans-serif;
+}

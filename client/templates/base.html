@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Dhrumilkumar Patel's Retro 90's Web Corner</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <style>
+        body {
+            background-color: #000000;
+            font-family: "Comic Sans MS", Arial, sans-serif;
+            color: #00FF00;
+        }
+        a {
+            color: #FF00FF;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        h1, h2, h3 {
+            text-align: center;
+            color: #FFFF00;
+        }
+        @keyframes blink {
+            0% { visibility: hidden; }
+            50% { visibility: hidden; }
+            100% { visibility: visible; }
+        }
+        .blink {
+            animation: blink 1s infinite;
+        }
+        table {
+            border: 3px solid #FF00FF;
+            background-color: #000000;
+        }
+        td {
+            background-color: #000000;
+            vertical-align: top;
+        }
+        hr {
+            border: 0;
+            height: 2px;
+            background: #FF00FF;
+        }
+        pre.ascii-divider {
+            text-align: center;
+            color: #FF00FF;
+            font-weight: bold;
+        }
+        .play-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #FF00FF;
+            color: #00FF00;
+            border: 3px solid #00FFFF;
+            cursor: pointer;
+            font-family: "Comic Sans MS";
+            font-size: 16px;
+            margin: 10px;
+            text-align: center;
+        }
+        .play-button:hover {
+            background: #FFFF00;
+            color: #000000;
+        }
+        .ascii-box {
+            color: #FF00FF;
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hidden audio element; user can choose to play -->
+    <audio id="bg-audio" src="{{ url_for('static', filename='audio/theme.mp3') }}" loop></audio>
+
+    <table width="100%" border="0" cellspacing="0" cellpadding="10">
+        <tr>
+            <td colspan="3" align="center" style="border-bottom: 3px dotted #FF00FF;">
+                <marquee behavior="alternate" scrollamount="5" style="font-size:24px; color:#00FF00;">
+                    <font face="Comic Sans MS">Welcome to Dhrumilkumar Patel's Retro 90's Web Corner!</font>
+                </marquee>
+            </td>
+        </tr>
+        <tr>
+            <td width="20%" style="border-right: 3px dotted #FF00FF;">
+                <h3><font face="Comic Sans MS">Navig8!</font></h3>
+                <ul style="list-style-type: none; padding:0;">
+                    <li><a href="{{ url_for('home') }}"><font face="Comic Sans MS">Home</font></a></li>
+                    <li><a href="{{ url_for('about') }}"><font face="Comic Sans MS">About Me</font></a></li>
+                    <li><a href="{{ url_for('guestbook') }}"><font face="Comic Sans MS">Guestbook</font></a></li>
+                </ul>
+                <pre class="ascii-divider">
+===========================
+||   Old-School Links!   ||
+===========================
+                </pre>
+                <p><font face="Comic Sans MS" size="2">[ <a href="https://neocities.org/" target="_blank">Neocities</a> ] [ <a href="https://www.paulgraham.com/index.html" target="_blank">Paul's Retro Site</a> ]</font></p>
+
+                <pre class="ascii-divider">
++-[ COOL STUFF ]-+
+| Under Const... |
++-[ STAY TUNED ]-+
+                </pre>
+            </td>
+            <td width="60%">
+                {% block content %}{% endblock %}
+
+                <!-- Music Play Button -->
+                <div style="text-align:center;">
+                    <div class="play-button blink" onclick="document.getElementById('bg-audio').play();">
+                        <font face="Comic Sans MS">Play Tunes!</font>
+                    </div>
+                </div>
+            </td>
+            <td width="20%" style="border-left: 3px dotted #FF00FF;">
+                <h3><font face="Comic Sans MS">Contact</font></h3>
+                <p><font face="Comic Sans MS">Email:</font></p>
+                <p><a href="mailto:dhrumil1612@icloud.com"><font face="Comic Sans MS">dhrumil1612@icloud.com</font></a></p>
+                <hr>
+                <p><font face="Comic Sans MS">Find Me:</font></p>
+                <p><font face="Comic Sans MS" size="2">[ <a href="https://www.linkedin.com/in/dhrumil-patel2002" target="_blank">LinkedIn</a> ] [ <a href="https://github.com/dhrumilp12" target="_blank">GitHub</a> ] [ <a href="https://devpost.com/dhrumil1612" target="_blank">DevPost</a> ]<br>[ <a href="https://dhrumil-patel.onrender.com" target="_blank">Portfolio</a> ] [ <a href="https://learn.microsoft.com/en-us/users/dhrumilkumarpatel-1225/" target="_blank">Microsoft Learn</a> ]</font></p>
+                <hr>
+                <p><font face="Comic Sans MS">Thanks for visiting!</font></p>
+                <pre class="ascii-divider">
+===================
+|| Under Const. ||
+===================
+                </pre>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3" align="center" style="border-top: 3px dotted #FF00FF;">
+                <pre class="ascii-divider">
+***********************
+* © 1997-2024 Dhrumilkumar Patel *
+*       All rights reserved.    *
+***********************
+                </pre>
+            </td>
+        </tr>
+    </table>
+
+</body>
+</html>
