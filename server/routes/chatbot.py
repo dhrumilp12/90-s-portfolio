@@ -11,7 +11,7 @@ logger = logging.getLogger(__name__)
 # Initialize Blueprint
 chatbot_bp = Blueprint('chatbot_bp', __name__)
 
-# Initialize MongoDB Collection (assuming you have a collection with info about you)
+# Initialize MongoDB Collection
 db_client = MongoDBClient.get_client()
 db = db_client[MongoDBClient.get_db_name()]
 info_collection = db['resume']  # Ensure this collection exists and contains relevant data
@@ -48,16 +48,85 @@ def chatbot():
         logger.warning("Empty message received.")
         return jsonify({'error': 'Empty message.'}), 400
 
-    # RAG: Retrieve relevant information from MongoDB
+    # Retrieve the entire resume data from MongoDB
     try:
-        # Example: Search for keywords in user_message to fetch relevant info
-        # This is a simplistic approach; consider using more advanced search/query mechanisms
-        keywords = user_message.lower().split()
-        query = {"$or": [{"content": {"$regex": keyword, "$options": "i"}} for keyword in keywords]}
-        retrieved_info = list(info_collection.find(query, {"_id": 0, "content": 1}))
+        resume_data = info_collection.find_one({"name": "Dhrumilkumar Patel"}, {"_id": 0})
+        if not resume_data:
+            context = "I don't have specific information about that."
+        else:
+            # Serialize resume_data into a string
+            context = f"Name: {resume_data.get('name', '')}\n"
 
-        # Compile retrieved information into a context string
-        context = "\n".join([entry['content'] for entry in retrieved_info]) if retrieved_info else "I don't have specific information about that."
+            contact = resume_data.get('contact', {})
+            if contact:
+                context += "Contact Information:\n"
+                for key, value in contact.items():
+                    context += f"  {key.capitalize()}: {value}\n"
+
+            education = resume_data.get('education', [])
+            if education:
+                context += "Education:\n"
+                for edu in education:
+                    degree = edu.get('degree', '')
+                    institution = edu.get('institution', '')
+                    location = edu.get('location', '')
+                    gpa = edu.get('gpa', '')
+                    duration = edu.get('duration', '')
+                    expected_graduation = edu.get('expected_graduation', '')
+
+                    context += f"  {degree} at {institution}, {location}\n"
+                    if gpa:
+                        context += f"    GPA: {gpa}\n"
+                    if duration:
+                        context += f"    Duration: {duration}\n"
+                    if expected_graduation:
+                        context += f"    Expected Graduation: {expected_graduation}\n"
+
+            skills = resume_data.get('skills', {})
+            if skills:
+                context += "Skills:\n"
+                for category, skills_list in skills.items():
+                    context += f"  {category}: {', '.join(skills_list)}\n"
+
+            experience = resume_data.get('experience', [])
+            if experience:
+                context += "Experience:\n"
+                for exp in experience:
+                    title = exp.get('title', '')
+                    company = exp.get('company', '')
+                    location = exp.get('location', '')
+                    duration = exp.get('duration', '')
+                    responsibilities = exp.get('responsibilities', [])
+
+                    context += f"  {title} at {company}, {location}\n"
+                    if duration:
+                        context += f"    Duration: {duration}\n"
+                    for resp in responsibilities:
+                        context += f"    - {resp}\n"
+
+            projects = resume_data.get('projects', [])
+            if projects:
+                context += "Projects:\n"
+                for proj in projects:
+                    name = proj.get('name', '')
+                    description = proj.get('description', '')
+                    links = proj.get('links', {})
+
+                    context += f"  {name}: {description}\n"
+                    for link_name, link_url in links.items():
+                        context += f"    {link_name}: {link_url}\n"
+
+            honors_awards = resume_data.get('honors_awards', [])
+            if honors_awards:
+                context += "Honors and Awards:\n"
+                for award in honors_awards:
+                    title = award.get('title', '')
+                    details = award.get('details', '')
+                    link = award.get('link', '')
+
+                    context += f"  {title}: {details}\n"
+                    if link:
+                        context += f"    Link: {link}\n"
 
     except Exception as e:
         logger.error(f"Error retrieving data from MongoDB: {e}")
@@ -72,10 +141,9 @@ User: {user_message}
 Chatbot:"""
 
     # Send request to Gemini AI using the model's generate_content method
-   
     try:
         response = model.generate_content(
-            contents=prompt,  # Replace 'prompt' with 'contents'
+            contents=prompt,  # Correct parameter name
             generation_config=genai.GenerationConfig(
                 max_output_tokens=150,
                 temperature=0.7,
