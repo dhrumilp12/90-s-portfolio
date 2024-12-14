@@ -1,8 +1,25 @@
+
 body {
     margin: 0;
     padding: 0;
+    background-image: url('../images/wallpaper.png'); /* Path to your background image */
+    background-repeat: repeat; /* Tiling the pattern */
+    background-size: auto; /* Adjust as needed */
+    font-family: "Comic Sans MS", Arial, sans-serif;
+    color: #00FF00;
+    cursor: none; /* Hide default cursor */
 }
 
+
+/* Gradient Animation */
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+
+/* Reset ul and li margins and paddings */
 ul {
     margin: 0;
     padding: 0;
@@ -15,9 +32,12 @@ ul li {
 /* Links: Pink default, Yellow hover, very neon */
 a {
     color: #FF00FF;
+    transition: color 0.5s ease;
 }
+
 a:hover {
     color: #FFFF00;
+    text-decoration: underline; /* Maintain underline on hover */
 }
 
 /* Retro look for form elements */
@@ -26,4 +46,153 @@ input[type="text"], textarea {
     color: #00FF00;
     border: 2px solid #FF00FF;
     font-family: "Comic Sans MS", sans-serif;
+}
+
+/* Enhance the play-button with a retro neon look */
+.play-button {
+    background-color: #000000;
+    color: #00FF00;
+    border: 2px solid #FF00FF;
+    font-family: "Comic Sans MS", sans-serif;
+    font-size: 16px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: box-shadow 0.5s ease, transform 0.2s ease;
+    text-shadow: 0 0 5px #FF00FF, 0 0 10px #FF00FF;
+}
+
+.play-button:hover {
+    box-shadow: 0 0 10px #FFFF00, 0 0 20px #FFFF00, 0 0 30px #FFFF00;
+    transform: scale(0.9);
+}
+
+.play-button:active {
+    transform: scale(0.9);
+}
+
+/* Rainbow text animation */
+@keyframes rainbow {
+    0% { color: #FF00FF; }
+    25% { color: #00FFFF; }
+    50% { color: #FFFF00; }
+    75% { color: #FF00FF; }
+    100% { color: #00FF00; }
+}
+
+/* Neon glow pulse for ASCII dividers */
+@keyframes neon-glow {
+    0%, 100% { text-shadow: 0 0 5px #FF00FF, 0 0 10px #FF00FF, 0 0 15px #FF00FF; }
+    50% { text-shadow: 0 0 10px #FFFF00, 0 0 20px #FFFF00, 0 0 30px #FFFF00; }
+}
+
+/* Apply neon glow to ascii dividers */
+.ascii-divider {
+    animation: neon-glow 2s infinite alternate;
+}
+
+/* Rainbow text class if needed */
+.rainbow-text {
+    animation: rainbow 5s linear infinite;
+}
+
+/* Custom Cursor */
+.custom-cursor {
+    position: fixed;
+    width: 20px; /* Adjusted for better responsiveness */
+    height: 20px;
+    background: linear-gradient(45deg, #FF00FF, #00FF00); /* Gradient neon colors */
+    border-radius: 50%; /* Circular cursor */
+    pointer-events: none;
+    z-index: 9999; /* Keeps it on top */
+    transition: width 0.2s ease, height 0.2s ease, background-color 0.2s ease;
+    box-shadow: 0 0 20px rgba(255, 0, 255, 0.8), 0 0 30px rgba(0, 255, 0, 0.8);
+}
+
+/* Adjust cursor size and color on hover */
+a:hover + .custom-cursor, .play-button:hover + .custom-cursor {
+    width: 25px;
+    height: 25px;
+    background-color: #FFFF00; /* Yellow when hovering over a link */
+}
+
+.play-button:hover + .custom-cursor {
+    width: 30px;
+    height: 30px;
+    background: #FF00FF;
+}
+
+/* Make images responsive */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Responsive Design */
+
+/* For tablets and smaller screens */
+@media (max-width: 900px) {
+    table {
+        width: 100%;
+    }
+
+    td {
+        display: block;
+        width: 100%;
+        border: none; /* Remove borders for cleaner stacking */
+    }
+
+    /* Center align all content */
+    td {
+        text-align: center;
+    }
+
+    /* Adjust padding */
+    table, td {
+        padding: 10px;
+    }
+
+    /* Adjust font sizes for better readability */
+    body {
+        font-size: 14px;
+    }
+
+    h1, h2, h3 {
+        font-size: 20px;
+    }
+}
+
+/* For mobile devices */
+@media (max-width: 600px) {
+    .play-button {
+        width: 100%;
+        padding: 15px;
+        font-size: 18px;
+    }
+
+    /* Stack navigation links vertically */
+    ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    ul li {
+        margin-bottom: 10px;
+    }
+
+    /* Adjust ASCII dividers */
+    .ascii-divider {
+        font-size: 12px;
+    }
+
+    /* Adjust marquee font size */
+    marquee {
+        font-size: 12px;
+    }
+
+    /* Make links and buttons touch-friendly */
+    a, .play-button {
+        padding: 10px 15px;
+        font-size: 16px;
+    }
 }

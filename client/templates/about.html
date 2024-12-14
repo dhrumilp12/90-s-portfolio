@@ -1,8 +1,11 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1><font face="Comic Sans MS">About Me</font></h1>
 
+<p align="center" style="display: flex; align-items: center; justify-content: center;">
+   <img src="{{ url_for('static', filename='images/about_me.gif') }}" alt="About Me GIF" style="margin-right: 10px;">
+   <font face="Comic Sans MS" color="#FFFF00" size="6">About Me</font>
+</p>
 <p>
    <font face="Comic Sans MS">
    <b>Name:</b> Dhrumilkumar Patel<br>
@@ -13,11 +16,15 @@
    </font>
 </p>
 
-<pre class="ascii-divider">
-===========================
-||     My Skill Stack    ||
-===========================
-</pre>
+
+
+   
+   <pre class="ascii-divider" align="center">
+=================================
+||  <img src="{{ url_for('static', filename='images/skills.gif') }}" alt="Skill Stack GIF" width="30" style="margin-right: 10px; vertical-align: middle;">   My Skill Stack    ||
+=================================
+   </pre>
+
 
 <p>
    <font face="Comic Sans MS">
@@ -34,10 +41,10 @@
    </font>
 </p>
 
-<pre class="ascii-divider">
-===========================
-||  Honors & Experience  ||
-===========================
+<pre class="ascii-divider" align="center">
+=====================================
+||  <img src="{{ url_for('static', filename='images/pikachu.gif') }}" alt="pikachu GIF" width="30" style="margin-right: 10px; vertical-align: middle;">   Honors & Experience    ||
+=====================================
 </pre>
 
 <p>

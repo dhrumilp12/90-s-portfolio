@@ -1,13 +1,17 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1 class="blink"><font face="Comic Sans MS">Guestbook</font></h1>
-
+<p align="center" style="display: flex; align-items: center; justify-content: center;">
+    <img src="{{ url_for('static', filename='images/guestbk.gif') }}" alt="Guestbook GIF">
+    <font face="Comic Sans MS" color="#FFFF00" size="6">Guestbook</font>
+ </p>
 <p>
     <font face="Comic Sans MS">
     Leave a message and let me know you stopped by!
     </font>
 </p>
+
+
 
 <form action="{{ url_for('guestbook') }}" method="POST" style="font-family:'Comic Sans MS'; color:#00FF00;">
     <p>
