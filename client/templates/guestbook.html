@@ -1,42 +1,49 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<p align="center" style="display: flex; align-items: center; justify-content: center;">
-    <img src="{{ url_for('static', filename='images/guestbk.gif') }}" alt="Guestbook GIF">
-    <font face="Comic Sans MS" color="#FFFF00" size="6">Guestbook</font>
- </p>
-<p>
-    <font face="Comic Sans MS">
-    Leave a message and let me know you stopped by!
-    </font>
-</p>
+<!-- Guestbook Header -->
+<header class="guestbook-header">
+    <img src="{{ url_for('static', filename='images/guestbk.gif') }}" alt="Guestbook GIF" class="guestbook-gif">
+    <h1 class="guestbook-title">Guestbook</h1>
+</header>
 
-
-
-<form action="{{ url_for('guestbook') }}" method="POST" style="font-family:'Comic Sans MS'; color:#00FF00;">
+<!-- Guestbook Description -->
+<section class="guestbook-description">
     <p>
-        <label>Your Name: <input type="text" name="name" placeholder="e.g. 'CoolSurfer123'"></label>
+        <span class="retro-text">Leave a message and let me know you stopped by!</span>
     </p>
-    <p>
-        <textarea name="message" rows="5" cols="40" placeholder="Your radical message here..."></textarea>
-    </p>
-    <p>
-        <input type="submit" value="Sign Guestbook" style="background:#FF00FF; color:#00FF00; border:2px solid #00FFFF;">
-    </p>
-</form>
+</section>
 
-<hr>
+<!-- Guestbook Form -->
+<section class="guestbook-form-section">
+    <form id="guestbook-form" class="guestbook-form">
+        <div class="form-group">
+            <label for="name" class="form-label">Your Name:</label>
+            <input type="text" id="name" name="name" placeholder="e.g. 'CoolSurfer123'" required class="form-input">
+        </div>
+        <div class="form-group">
+            <label for="message" class="form-label">Your Message:</label>
+            <textarea id="message" name="message" rows="5" cols="40" placeholder="Your radical message here..." required class="form-textarea"></textarea>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="play-button retro-button">Sign Guestbook</button>
+        </div>
+    </form>
+</section>
 
-{% if entries %}
-    <h3><font face="Comic Sans MS">Previous Entries:</font></h3>
-    <ul>
-    {% for name, msg in entries %}
-        <li>
-            <font face="Comic Sans MS"><b>{{ name }}</b> says: <i>{{ msg }}</i></font>
-        </li>
-    {% endfor %}
+<!-- Divider -->
+<hr class="divider">
+
+<!-- Previous Entries -->
+<section class="guestbook-entries-section">
+    <h3 class="entries-title retro-text">Previous Entries:</h3>
+    <ul id="guestbook-entries" class="entries-list">
+        <li class="loading-message"><span class="retro-text">Loading entries...</span></li>
     </ul>
-{% else %}
-    <p><font face="Comic Sans MS">No entries yet! Be the first to leave a note!</font></p>
-{% endif %}
+</section>
+
+<!-- Optional: JavaScript for Enhanced Interactivity -->
+<!-- Ensure this script is included in your base.html or here if preferred -->
+<!-- <script src="{{ url_for('static', filename='js/guestbook.js') }}"></script> -->
+
 {% endblock %}

@@ -1,4 +1,4 @@
-
+/* Existing Styles */
 body {
     margin: 0;
     padding: 0;
@@ -10,14 +10,12 @@ body {
     cursor: none; /* Hide default cursor */
 }
 
-
 /* Gradient Animation */
 @keyframes gradientAnimation {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
-
 
 /* Reset ul and li margins and paddings */
 ul {
@@ -46,6 +44,10 @@ input[type="text"], textarea {
     color: #00FF00;
     border: 2px solid #FF00FF;
     font-family: "Comic Sans MS", sans-serif;
+    padding: 8px;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 /* Enhance the play-button with a retro neon look */
@@ -59,15 +61,16 @@ input[type="text"], textarea {
     cursor: pointer;
     transition: box-shadow 0.5s ease, transform 0.2s ease;
     text-shadow: 0 0 5px #FF00FF, 0 0 10px #FF00FF;
+    border-radius: 4px;
 }
 
 .play-button:hover {
     box-shadow: 0 0 10px #FFFF00, 0 0 20px #FFFF00, 0 0 30px #FFFF00;
-    transform: scale(0.9);
+    transform: scale(0.95);
 }
 
 .play-button:active {
-    transform: scale(0.9);
+    transform: scale(0.95);
 }
 
 /* Rainbow text animation */
@@ -85,9 +88,29 @@ input[type="text"], textarea {
     50% { text-shadow: 0 0 10px #FFFF00, 0 0 20px #FFFF00, 0 0 30px #FFFF00; }
 }
 
+/* Style for Guestbook Entries */
+#guestbook-entries {
+    list-style-type: none;
+    padding: 0;
+}
+
+#guestbook-entries li {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px #FF00FF, 0 0 20px #FF00FF;
+    transition: transform 0.3s ease;
+}
+
+#guestbook-entries li:hover {
+    transform: translateY(-5px);
+}
+
 /* Apply neon glow to ascii dividers */
 .ascii-divider {
     animation: neon-glow 2s infinite alternate;
+    margin: 20px 0;
 }
 
 /* Rainbow text class if needed */
@@ -195,4 +218,202 @@ img {
         padding: 10px 15px;
         font-size: 16px;
     }
+
+    
+}
+
+
+/* Guestbook Header */
+.guestbook-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.guestbook-gif {
+    margin-right: 10px;
+}
+
+.guestbook-title {
+    font-size: 36px;
+    color: #FFFF00;
+    text-shadow: 0 0 10px #FF00FF, 0 0 20px #FF00FF;
+}
+
+/* Guestbook Description */
+.guestbook-description {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.retro-text {
+    font-family: "Comic Sans MS", sans-serif;
+    color: #00FF00;
+    font-size: 18px;
+    text-shadow: 0 0 5px #FF00FF;
+}
+
+/* Guestbook Form */
+.guestbook-form-section {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.guestbook-form {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border: 2px solid #FF00FF;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-label {
+    display: block;
+    font-family: "Comic Sans MS", sans-serif;
+    color: #FFFF00;
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+
+.form-input, .form-textarea {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #FF00FF;
+    background-color: #000000;
+    color: #00FF00;
+    border-radius: 5px;
+    font-family: "Comic Sans MS", sans-serif;
+    font-size: 14px;
+}
+
+.form-input:focus, .form-textarea:focus {
+    outline: none;
+    box-shadow: 0 0 10px #FFFF00;
+}
+
+/* Retro Button */
+.retro-button {
+    background-color: #FF00FF;
+    color: #00FF00;
+    border: 2px solid #00FFFF;
+    font-family: "Comic Sans MS", sans-serif;
+    font-size: 16px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: box-shadow 0.5s ease, transform 0.2s ease;
+    text-shadow: 0 0 5px #FF00FF, 0 0 10px #FF00FF;
+    border-radius: 5px;
+}
+
+.retro-button:hover {
+    box-shadow: 0 0 10px #FFFF00, 0 0 20px #FFFF00, 0 0 30px #FFFF00;
+    transform: scale(0.95);
+}
+
+.retro-button:active {
+    transform: scale(0.95);
+}
+
+/* Divider */
+.divider {
+    border: none;
+    height: 2px;
+    background: #FF00FF;
+    margin: 40px 0;
+    width: 80%;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Guestbook Entries */
+.guestbook-entries-section {
+    width: 80%;
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+}
+
+.entries-title {
+    font-family: "Comic Sans MS", sans-serif;
+    color: #FFFF00;
+    text-shadow: 0 0 5px #FF00FF;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.entries-list li {
+    display: flex;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 15px;
+    margin-bottom: 15px;
+    border-left: solid #FF00FF;
+    border-radius: 5px;
+    font-family: "Comic Sans MS", sans-serif;
+    color: #00FF00;
+}
+
+.entries-list li::before {
+    content: "👤"; /* User icon */
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+/* Loading Message */
+.loading-message {
+    text-align: center;
+    font-family: "Comic Sans MS", sans-serif;
+    color: #FFFF00;
+    text-shadow: 0 0 5px #FF00FF;
+}
+
+/* Responsive Enhancements */
+@media (max-width: 900px) {
+    /* Adjust guestbook form width */
+    .guestbook-form {
+        width: 90%;
+    }
+
+    .guestbook-header {
+        flex-direction: column;
+    }
+
+    .guestbook-gif {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    .guestbook-form {
+        width: 95%;
+    }
+
+    .entries-list li::before {
+        left: -25px;
+    }
+
+    .entries-list li {
+        padding: 10px;
+    }
+
+    .entries-title {
+        font-size: 18px;
+    }
+
+    .guestbook-title {
+        font-size: 28px;
+    }
+}
+
+#hit-counter {
+    color: #FF00FF;
+    text-shadow: 0 0 10px #00FFFF;
 }
