@@ -3,6 +3,10 @@
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('guestbook-form');
     const entriesList = document.getElementById('guestbook-entries');
+    const notificationContainer = document.getElementById('notification-container');
+    const notification = document.getElementById('notification');
+    const notificationMessage = document.getElementById('notification-message');
+    const notificationClose = document.getElementById('notification-close');
 
     // Update BACKEND_URL based on your deployment
     const isProduction = window.location.hostname !== 'localhost';
@@ -37,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     data.forEach(entry => {
                         const li = document.createElement('li');
                         li.innerHTML = `
-                            <strong>${sanitizeHTML(entry.name)}</strong> says:
+                            <strong>${sanitizeHTML(entry.name)}</strong>&nbsp;says:&nbsp;
                             <em>${sanitizeHTML(entry.message)}</em>
                         `;
                         entriesList.appendChild(li);
@@ -48,6 +52,30 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.error('Error fetching entries:', error);
                 entriesList.innerHTML = '<li class="loading-message"><span class="retro-text">Failed to load entries.</span></li>';
             });
+    }
+
+    /**
+     * Displays a notification message.
+     * @param {string} message - The message to display.
+     * @param {string} type - The type of message ('success' or 'error').
+     */
+    function showNotification(message, type) {
+        notificationMessage.textContent = message;
+        notification.classList.remove('hidden');
+        notification.classList.remove('success', 'error');
+        notification.classList.add(type);
+
+        // Auto-hide after 5 seconds
+        setTimeout(() => {
+            hideNotification();
+        }, 5000);
+    }
+
+    /**
+     * Hides the notification message.
+     */
+    function hideNotification() {
+        notification.classList.add('hidden');
     }
 
     /**
@@ -65,13 +93,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Basic front-end validation
         if (!data.name || !data.message) {
-            alert('Both name and message are required!');
+            showNotification('Both name and message are required!', 'error');
             return;
         }
 
         // Disable the form while submitting
-        form.querySelector('button').disabled = true;
-        form.querySelector('button').textContent = 'Submitting...';
+        const submitButton = form.querySelector('button');
+        submitButton.disabled = true;
+        submitButton.textContent = 'Submitting...';
 
         fetch(BACKEND_URL, {
             method: 'POST',
@@ -87,32 +116,36 @@ document.addEventListener('DOMContentLoaded', () => {
             return response.json();
         })
         .then(result => {
-            alert(result.message);
+            showNotification(result.message, 'success');
             form.reset(); // Clear the form
             fetchEntries(); // Refresh entries
         })
         .catch(error => {
             console.error('Error submitting entry:', error);
             if (error.error) {
-                alert(error.error);
+                showNotification(error.error, 'error');
             } else {
-                alert('Failed to submit your entry. Please try again.');
+                showNotification('Failed to submit your entry. Please try again.', 'error');
             }
         })
         .finally(() => {
             // Re-enable the form
-            form.querySelector('button').disabled = false;
-            form.querySelector('button').textContent = 'Sign Guestbook';
+            submitButton.disabled = false;
+            submitButton.textContent = 'Sign Guestbook';
         });
     }
 
-    // Guestbook-specific functionality
+    // Attach event listeners to the form and notification close button
     if (form && entriesList) {
         // Initial fetch of entries on page load
         fetchEntries();
 
         // Attach event listener to the form
         form.addEventListener('submit', handleFormSubmit);
+    }
+
+    if (notificationClose) {
+        notificationClose.addEventListener('click', hideNotification);
     }
 
     // Hit counter functionality

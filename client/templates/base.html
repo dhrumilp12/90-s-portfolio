@@ -6,9 +6,10 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <script src="{{ url_for('static', filename='js/cursor.js') }}" defer></script>
     <script src="{{ url_for('static', filename='js/guestbook.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='js/chatbot.js') }}" defer></script>
 </head>
 <body>
-    
+    <div class="custom-cursor"></div>
     <!-- Hidden audio element; user can choose to play -->
     <audio id="bg-audio" src="{{ url_for('static', filename='audio/theme.mp3') }}" loop></audio>
 
@@ -104,6 +105,42 @@
             </td>
         </tr>
     </table>
+
+    <!-- 📞 **Chatbot Integration** -->
+    <!-- Chatbot Icon -->
+    <div class="chatbot-icon" id="chatbot-icon">
+        <img src="{{ url_for('static', filename='images/chatbot_icon.gif') }}" alt="Chatbot Icon">
+    </div>
     
+    <!-- Chatbot Window -->
+    <div class="chatbot-window" id="chatbot-window">
+        <div class="chatbot-header">
+            <img src="{{ url_for('static', filename='images/chatbot_icon.gif') }}" alt="Chatbot Icon" width="30">
+            <span class="chatbot-title">Retro Chatbot</span>
+            <span class="chatbot-close" id="chatbot-close">&times;</span>
+        </div>
+        <div class="chatbot-messages" id="chatbot-messages">
+            <!-- Messages will appear here -->
+        </div>
+        <form id="chatbot-form" class="chatbot-form">
+            <input type="text" id="chatbot-input" placeholder="Ask me anything about me!" required>
+            <button type="submit" class="retro-button">Send</button>
+        </form>
+    </div>
+
+    <!-- Notification Container -->
+    <div id="notification-container">
+        <div id="notification" class="notification hidden">
+            <span id="notification-message"></span>
+            <span id="notification-close" class="notification-close">&times;</span>
+        </div>
+    </div>
+    
+    <!-- Hidden Audio Elements for Sound Effects -->
+    <div style="display: none;">
+        <audio id="send-sound" data-send-sound="{{ url_for('static', filename='audio/send.mp3') }}"></audio>
+        <audio id="receive-sound" data-receive-sound="{{ url_for('static', filename='audio/receive.mp3') }}"></audio>
+    </div>
+
 </body>
 </html>

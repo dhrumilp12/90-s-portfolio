@@ -1,0 +1,113 @@
+{
+  "name": "Dhrumilkumar Patel",
+  "contact": {
+    "phone": "+1 (478) 235-2824",
+    "location": "Americus, GA",
+    "email": "dhrumil1612@icloud.com",
+    "linkedin": "https://www.linkedin.com/in/dhrumil-patel2002",
+    "github": "https://github.com/dhrumilp12",
+    "devpost": "https://devpost.com/dhrumil1612",
+    "portfolio": "https://dhrumil-patel.onrender.com",
+    "microsoft_learn": "https://learn.microsoft.com/en-us/users/dhrumilkumarpatel-1225/"
+  },
+  "education": [
+    {
+      "degree": "Bachelor of Computer Science",
+      "institution": "Georgia Southwestern State University",
+      "location": "Americus, GA",
+      "gpa": "3.95/4.0",
+      "expected_graduation": "2025"
+    },
+    {
+      "degree": "Associate's Degree in Computer Science",
+      "institution": "LDRP Institute of Technology and Research, Gujarat Technological University",
+      "gpa": "8.72/10.0",
+      "duration": "2020 - 2022"
+    }
+  ],
+  "skills": {
+    "Programming Languages": ["Python", "JavaScript", "Java", "C++", "C#", "SQL", "C"],
+    "Frameworks & Libraries": ["React.js", "Node.js", "Flask", "Express.js", "Vite", "MUI", "Fast"],
+    "Databases": ["MongoDB", "SQL"],
+    "Web Technologies": ["HTML5", "CSS3", "JavaScript", "XML"],
+    "Cloud Platforms": ["Azure (Functions, Web Apps, Cosmos DB, OpenAI)", "AWS", "Google Cloud Platform (GCP)"],
+    "DevOps & Tools": ["GitHub", "Docker", "Azure DevOps", "CI/CD pipelines"],
+    "AI & ML": ["Azure OpenAI", "Speech Services", "LangChain"],
+    "Operating Systems": ["Windows Server", "Linux (Ubuntu, Kali-Linux)"],
+    "Networking": ["TCP/IP", "Routing and Switching", "Network Administration"],
+    "Soft Skills": ["Organizational skills", "Communication", "Teamwork", "Leadership", "Project Management"]
+  },
+  "experience": [
+    {
+      "title": "Web Developer - Internship",
+      "company": "Georgia Southwestern State University",
+      "location": "Americus, GA",
+      "duration": "Jan 2024 - Jul 2024",
+      "responsibilities": [
+        "Enhanced university web pages focusing on UX and content management.",
+        "Collaborated on improving online presence with HTML, CSS, XML, Velocity, and JavaScript.",
+        "Implemented accessibility improvements, ensuring ADA compliance."
+      ]
+    },
+    {
+      "title": "Web Developer - Internship",
+      "company": "Georgia Southwestern State University",
+      "location": "Americus, GA",
+      "duration": "Aug 2024 - Present",
+      "responsibilities": [
+        "Enhanced university web pages focusing on UX and content management.",
+        "Collaborated on improving online presence with HTML, CSS, XML, Velocity, and JavaScript.",
+        "Implemented accessibility improvements, ensuring ADA compliance."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "AI-Driven Mental Health Companion (Earlent)",
+      "description": "Utilized Azure Cosmos DB and OpenAI for mental health support.",
+      "links": {
+        "DevPost": "https://devpost.com/software/earlent-2-0-ai-driven-mental-health-companion",
+        "GitHub": "https://github.com/dhrumilp12/Mental-Health-Companion",
+        "Badge": "https://drive.google.com/file/d/1G6MMZq7k-EBDADr8B0bAX3yQ1WbfQWd_/view?usp=drive_link",
+        "Certificate-1": "https://learn.microsoft.com/api/achievements/share/en-us/DhrumilkumarPatel-1225/BG922N6D?sharingId=B66EE00878C4A462",
+        "Certificate-2": "https://learn.microsoft.com/api/achievements/share/en-us/DhrumilkumarPatel-1225/2KJNW56V?sharingId=B66EE00878C4A462"
+      }
+    },
+    {
+      "name": "EcoTrace: Community-Driven Environmental Monitoring Platform",
+      "description": "Real-time data visualization and community engagement.",
+      "links": {
+        "DevPost": "https://devpost.com/software/ecotrace-community-driven-environmental-monitoring-platform",
+        "GitHub": "https://github.com/dhrumilp12/EcoTrace.git"
+      }
+    },
+    {
+      "name": "Health Equalizer",
+      "description": "AI-based healthcare platform. Winner, 2024 AI for Change Hackathon.",
+      "links": {
+        "DevPost": "https://devpost.com/software/health-equalizer",
+        "GitHub": "https://github.com/dhrumilp12/Health-Equalizer",
+        "Certificate": "https://drive.google.com/file/d/1w0ex0B8HNnR5Sj391-bDwVXtSxxyLAj4/view?usp=drive_link"
+      }
+    },
+    {
+      "name": "Event Spotlight and Reservation System",
+      "description": "Designed and developed an event management system with a focus on system performance and user experience.",
+      "links": {
+        "DevPost": "https://devpost.com/software/event-spotlight-reservation-system",
+        "GitHub": "https://github.com/dhrumilp12/DevPostGsw-main.git"
+      }
+    }
+  ],
+  "honors_awards": [
+    {
+      "title": "Academic Honors",
+      "details": "President's List (Fall 2023, Spring 2024, Summer 2024, Fall 2024) and Dean's List (Summer 2023).",
+      "link": "https://gsw.meritpages.com/achievements/Area-Residents-Make-President-s-List-at-Georgia-Southwestern-State-University/177353"
+    },
+    {
+      "title": "Gujarat Common Entrance Test 2020",
+      "details": "Scored 90.05% for outstanding academic achievement."
+    }
+  ]
+}

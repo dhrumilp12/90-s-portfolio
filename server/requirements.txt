@@ -3,3 +3,5 @@ pymongo==4.4.0
 dnspython==2.3.0
 Flask-Cors==3.0.10
 python-dotenv==1.0.0
+openai
+pinecone-client
