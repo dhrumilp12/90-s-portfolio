@@ -1,3 +1,5 @@
+
+/* This is a simple game where the user clicks on images that appear on the screen.*/
 document.addEventListener('DOMContentLoaded', () => {
     const gameArea = document.getElementById('game-area');
     const scoreSpan = document.getElementById('score');
