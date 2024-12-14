@@ -5,8 +5,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const entriesList = document.getElementById('guestbook-entries');
 
     // Update BACKEND_URL based on your deployment
-    const BACKEND_URL = 'http://localhost:8000/guestbook';
-    const HIT_COUNTER_URL = 'http://localhost:8000/hit-counter'; 
+    const isProduction = window.location.hostname !== 'localhost';
+    const BACKEND_URL = isProduction ? 'https://nine0-s-portfolio.onrender.com/guestbook' : 'http://localhost:8000/guestbook';
+    const HIT_COUNTER_URL = isProduction ? 'https://nine0-s-portfolio.onrender.com/hit-counter' : 'http://localhost:8000/hit-counter';
 
     /**
      * Sanitizes input to prevent XSS by escaping HTML characters.
