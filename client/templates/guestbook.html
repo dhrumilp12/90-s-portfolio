@@ -1,6 +1,13 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<!-- =========================
+     GUESTBOOK PAGE
+     -------------------------
+     Encourages visitors to leave a message, simulating old personal site interactions.
+     Features a neon form, animated GIFs, and displays all previous entries.
+========================= -->
+
 <!-- Guestbook Header -->
 <header class="guestbook-header">
     <img src="{{ url_for('static', filename='images/guestbk.gif') }}" alt="Guestbook GIF" class="guestbook-gif">
@@ -42,8 +49,5 @@
     </ul>
 </section>
 
-<!-- Optional: JavaScript for Enhanced Interactivity -->
-<!-- Ensure this script is included in your base.html or here if preferred -->
-<!-- <script src="{{ url_for('static', filename='js/guestbook.js') }}"></script> -->
 
 {% endblock %}

@@ -1,3 +1,5 @@
+""" This module contains the chatbot route for the Flask server. """
+# Import necessary modules
 import os
 import re
 import logging

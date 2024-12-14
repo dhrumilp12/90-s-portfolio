@@ -1,64 +1,172 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<!-- =========================
+     ABOUT PAGE
+     -------------------------
+     This page provides a personal biography,
+     skills overview, education details (with
+     interactive progress bars), and honors/experience.
+     The layout and styling reinforce the retro 90s feel.
+========================= -->
 
-<p align="center" style="display: flex; align-items: center; justify-content: center;">
-   <img src="{{ url_for('static', filename='images/about_me.gif') }}" alt="About Me GIF" style="margin-right: 10px;">
-   <font face="Comic Sans MS" color="#FFFF00" size="6">About Me</font>
-</p>
-<p>
-   <font face="Comic Sans MS">
-   <b>Name:</b> Dhrumilkumar Patel<br>
-   <b>Location:</b> Americus, GA<br>
-   <b>Contact:</b> <a href="mailto:dhrumil1612@icloud.com">dhrumil1612@icloud.com</a><br>
-   <b>Currently:</b> Pursuing Bachelor of Computer Science at Georgia Southwestern State University (GPA: 3.95/4.0, Expected 2025)<br>
-   <b>Previous Education:</b> Associate's in Computer Science, LDRP Institute of Tech & Research (CPI: 8.72/10.0)
-   </font>
-</p>
-
-
-
-   
-   <pre class="ascii-divider" align="center">
+<!-- About Me Section -->
+<section class="about-me">
+    <header class="about-header">
+        <img src="{{ url_for('static', filename='images/about_me.gif') }}" alt="About Me GIF" class="about-gif">
+        <h1 class="about-title">About Me</h1>
+    </header>
+    
+    <article class="personal-info">
+        <p><strong>Name:</strong> Dhrumilkumar Patel</p>
+        <p><strong>Location:</strong> Americus, GA</p>
+        <p><strong>Contact:</strong> <a href="mailto:dhrumil1612@icloud.com">dhrumil1612@icloud.com</a></p>
+        <p><strong>Currently:</strong> Pursuing Bachelor of Computer Science at Georgia Southwestern State University (GPA: 3.95/4.0, Expected 2025)</p>
+        <p><strong>Previous Education:</strong> Associate's in Computer Science, LDRP Institute of Tech & Research (CPI: 8.72/10.0)</p>
+    </article>
+    
+    <!-- Skills Section -->
+    <section class="skills-section">
+        <pre class="ascii-divider" align="center">
 =================================
-||  <img src="{{ url_for('static', filename='images/skills.gif') }}" alt="Skill Stack GIF" width="30" style="margin-right: 10px; vertical-align: middle;">   My Skill Stack    ||
+||  <img src="{{ url_for('static', filename='images/skills.gif') }}" alt="Skill Stack GIF" width="30" class="divider-gif">   My Skill Stack    ||
 =================================
-   </pre>
-
-
-<p>
-   <font face="Comic Sans MS">
-   <b>Programming:</b> Python, JavaScript, Java, C++, C#, SQL, C<br>
-   <b>Frameworks & Libraries:</b> React.js, Node.js, Flask, Express.js, Vite, MUI, Fast<br>
-   <b>Databases:</b> MongoDB, SQL<br>
-   <b>Web:</b> HTML5, CSS3, JS, XML<br>
-   <b>Cloud:</b> Azure (OpenAI, Cosmos DB), AWS, GCP<br>
-   <b>DevOps & Tools:</b> GitHub, Docker, Azure DevOps, CI/CD<br>
-   <b>AI & ML:</b> Azure OpenAI, Speech Services, LangChain<br>
-   <b>OS:</b> Windows Server, Linux<br>
-   <b>Networking:</b> TCP/IP, Routing, Administration<br>
-   <b>Soft Skills:</b> Communication, Teamwork, Leadership, Project Management
-   </font>
-</p>
-
-<pre class="ascii-divider" align="center">
+        </pre>
+        <div class="skills">
+            <div class="skill-category">
+                <h2>Programming</h2>
+                <p>Python, JavaScript, Java, C++, C#, SQL, C</p>
+            </div>
+            <div class="skill-category">
+                <h2>Frameworks & Libraries</h2>
+                <p>React.js, Node.js, Flask, Express.js, Vite, MUI, Fast</p>
+            </div>
+            <div class="skill-category">
+                <h2>Databases</h2>
+                <p>MongoDB, SQL</p>
+            </div>
+            <div class="skill-category">
+                <h2>Web</h2>
+                <p>HTML5, CSS3, JS, XML</p>
+            </div>
+            <div class="skill-category">
+                <h2>Cloud</h2>
+                <p>Azure (OpenAI, Cosmos DB), AWS, GCP</p>
+            </div>
+            <div class="skill-category">
+                <h2>DevOps & Tools</h2>
+                <p>GitHub, Docker, Azure DevOps, CI/CD</p>
+            </div>
+            <div class="skill-category">
+                <h2>AI & ML</h2>
+                <p>Azure OpenAI, Speech Services, LangChain</p>
+            </div>
+            <div class="skill-category">
+                <h2>OS</h2>
+                <p>Windows Server, Linux</p>
+            </div>
+            <div class="skill-category">
+                <h2>Networking</h2>
+                <p>TCP/IP, Routing, Administration</p>
+            </div>
+            <div class="skill-category">
+                <h2>Soft Skills</h2>
+                <p>Communication, Teamwork, Leadership, Project Management</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Honors & Experience Section -->
+    <section class="honors-experience">
+        <pre class="ascii-divider" align="center">
 =====================================
-||  <img src="{{ url_for('static', filename='images/pikachu.gif') }}" alt="pikachu GIF" width="30" style="margin-right: 10px; vertical-align: middle;">   Honors & Experience    ||
+||  <img src="{{ url_for('static', filename='images/pikachu.gif') }}" alt="Pikachu GIF" width="30" class="divider-gif">   Honors & Experience    ||
 =====================================
-</pre>
+        </pre>
+        <div class="experience">
+            <article class="work-experience">
+                <h2>Experience</h2>
+                <ul>
+                    <li><strong>Web Developer Intern</strong> (Jan 2024 - Jul 2024, Aug 2024 - Present) at Georgia Southwestern State University</li>
+                    <li>Enhanced web pages, improved UX, ensured accessibility.</li>
+                </ul>
+            </article>
+            <article class="honors">
+                <h2>Honors</h2>
+                <ul>
+                    <li>President's List (Fall 2023, Spring 2024, Summer 2024, Fall 2024)</li>
+                    <li>Dean's List (Summer 2023)</li>
+                    <li>Gujarat Common Entrance Test 2020: 90.05%</li>
+                </ul>
+            </article>
+        </div>
+    </section>
+    
+    <!-- Motivational Marquee -->
+    <marquee behavior="alternate" scrollamount="3" class="motivational-marquee">
+        <span>Constantly Evolving, Always Learning!</span>
+    </marquee>
+</section>
 
-<p>
-   <font face="Comic Sans MS">
-   <b>Experience:</b><br>
-   - Web Developer Intern (Jan 2024 - Jul 2024, Aug 2024 - Present) at Georgia Southwestern State University: Enhanced web pages, improved UX, ensured accessibility.<br><br>
-   <b>Honors:</b><br>
-   - President's List (Fall 2023, Spring 2024, Summer 2024, Fall 2024)<br>
-   - Dean's List (Summer 2023)<br>
-   - Gujarat Common Entrance Test 2020: 90.05%
-   </font>
-</p>
+<!-- Additional Retro Features -->
+<section class="additional-features">
+    <!-- Retro Progress Bars for Education -->
+    <div class="progress-container">
+        <h3>Academic Progress</h3>
+        
+        <!-- Associate's Degree Progress Bar and Info -->
+        <div class="progress-bar" id="associate-bar">
+            <div class="progress-fill" style="width: 80%;">Associate's Degree</div>
+        </div>
+        <div id="associate-info" style="display:none; margin-top:10px;">
+            <h4 style="color:#FFFF00; text-shadow:0 0 5px #FF00FF;">Associate's in Computer Science (LDRP Institute of Tech & Research)</h4>
+            <p style="color:#00FF00; text-shadow:0 0 3px #FF00FF;">CPI: 8.72/10.0</p>
+            <p style="color:#00FF00; text-shadow:0 0 3px #FF00FF;">Key coursework: Data Structures, Algorithms, Basic Programming, Introduction to Databases, Networking Fundamentals.</p>
+        </div>
+        
+        <!-- Bachelor's Degree Progress Bar and Info -->
+        <div class="progress-bar" id="bachelor-bar">
+            <div class="progress-fill" style="width: 60%;">Bachelor's Degree</div>
+        </div>
+        <div id="bachelor-info" style="display:none; margin-top:10px;">
+            <h4 style="color:#FFFF00; text-shadow:0 0 5px #FF00FF;">Bachelor of Computer Science (Georgia Southwestern State University)</h4>
+            <p style="color:#00FF00; text-shadow:0 0 3px #FF00FF;">GPA: 3.95/4.0, Expected Graduation: 2025</p>
+            <p style="color:#00FF00; text-shadow:0 0 3px #FF00FF;">Advanced Coursework: Artificial Intelligence, Cloud Computing, Advanced Web Development, Database Management Systems, Software Engineering.</p>
+        </div>
+    </div>
+    
+    <!-- Retro Themed Fun Fact -->
+    <div class="fun-fact">
+        <h3>Did You Know?</h3>
+        <p>I once created a fully functioning chatbot in under 48 hours for a hackathon challenge!</p>
+    </div>
+</section>
 
-<marquee behavior="alternate" scrollamount="3" style="color: #00FFFF;">
-    <font face="Comic Sans MS">Constantly Evolving, Always Learning!</font>
-</marquee>
+<!-- Add a small script here or in a separate JS file -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const associateBar = document.getElementById('associate-bar');
+    const bachelorBar = document.getElementById('bachelor-bar');
+    const associateInfo = document.getElementById('associate-info');
+    const bachelorInfo = document.getElementById('bachelor-info');
+
+    associateBar.addEventListener('click', () => {
+        // Toggle visibility of associate-info
+        if (associateInfo.style.display === 'none' || associateInfo.style.display === '') {
+            associateInfo.style.display = 'block';
+        } else {
+            associateInfo.style.display = 'none';
+        }
+    });
+
+    bachelorBar.addEventListener('click', () => {
+        // Toggle visibility of bachelor-info
+        if (bachelorInfo.style.display === 'none' || bachelorInfo.style.display === '') {
+            bachelorInfo.style.display = 'block';
+        } else {
+            bachelorInfo.style.display = 'none';
+        }
+    });
+});
+</script>
 {% endblock %}

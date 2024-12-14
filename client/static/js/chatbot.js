@@ -1,5 +1,9 @@
-// Updated chatbot.js
-
+/*
+Description: Chatbot functionality for the portfolio website. 
+This script handles chatbot interactions, including displaying messages, 
+sending messages to the backend, and playing sound effects. It also toggles 
+the chatbot window and closes it when clicking outside the window.
+*/
 document.addEventListener('DOMContentLoaded', function() {
     const chatbotIcon = document.getElementById('chatbot-icon');
     const chatbotWindow = document.getElementById('chatbot-window');

@@ -11,6 +11,7 @@ Methods:
     execute_with_retries(operation, max_retries=5): Executes a given operation with retries.
 """
 
+# Import necessary modules`
 import os
 import time
 import random
@@ -25,6 +26,7 @@ logger = logging.getLogger(__name__)
 
 load_dotenv()  # Load environment variables from .env
 
+# MongoDB Client Class
 class MongoDBClient:
     _client = None
     _db_name = None

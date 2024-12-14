@@ -1,5 +1,4 @@
-// guestbook.js
-
+/* This script handles the guestbook form submission and entry display. */
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('guestbook-form');
     const entriesList = document.getElementById('guestbook-entries');

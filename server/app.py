@@ -1,9 +1,8 @@
-
-
 """
 Flask application entry point.
 """
 
+# Import necessary modules
 import os
 from flask import Flask
 from routes import register_blueprints
@@ -51,6 +50,7 @@ def create_app():
 
     return app
 
+# Run the application
 if __name__ == '__main__':
     app = create_app()
     port = int(os.environ.get('PORT', 5000))

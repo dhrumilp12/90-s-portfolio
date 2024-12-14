@@ -1,4 +1,6 @@
+""" This script uploads resume data to MongoDB. """
 
+# Import necessary modules
 import json
 import os
 from pymongo import MongoClient

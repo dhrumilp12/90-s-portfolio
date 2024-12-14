@@ -1,3 +1,5 @@
+""" Simple Flask web application with a hit counter and guestbook. """
+# Import necessary modules
 from flask import Flask, render_template, request, redirect, url_for
 import os
 from datetime import datetime
@@ -7,6 +9,7 @@ app = Flask(__name__)
 visit_count = 0
 guestbook_entries = []
 
+# Define routes
 @app.route('/')
 def home():
     global visit_count
@@ -28,7 +31,7 @@ def guestbook():
         return redirect(url_for('guestbook'))
     return render_template('guestbook.html', entries=guestbook_entries, now=datetime.utcnow)
 
-
+# Run the application
 if __name__ == '__main__':
     HOST = os.getenv("FLASK_RUN_HOST", "127.0.0.1")
     PORT = int(os.getenv("FLASK_RUN_PORT", 3000))

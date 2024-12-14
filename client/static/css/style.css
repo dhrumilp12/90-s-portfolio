@@ -1,23 +1,40 @@
-/* Existing Styles */
+/****************************************************************************
+ * STYLE.CSS for Dhrumilkumar Patel's Retro 90's Web Corner
+ * --------------------------------------------------------------------------
+ * This stylesheet embraces a 90s web aesthetic—bright neon colors, blinking
+ * text, marquee elements, ASCII dividers, and retro navigation cues.
+ * 
+ * We utilize a variety of old-school web patterns, inline animations, and
+ * pixelated GIFs to capture the nostalgic spirit of the early internet era.
+ * This code maintains a consistent retro vibe across pages while providing
+ * modern responsive enhancements to ensure it still works well on various 
+ * screen sizes.
+ ****************************************************************************/
+
+/* ===========================
+   Base Styles
+   =========================== */
+
+/* Global body style: retro wallpaper background, neon text, custom cursor hidden by default */
 body {
     margin: 0;
     padding: 0;
-    background-image: url('../images/wallpaper.png'); /* Path to your background image */
-    background-repeat: repeat; /* Tiling the pattern */
-    background-size: auto; /* Adjust as needed */
+    background-image: url('../images/wallpaper.png');
+    background-repeat: repeat;
+    background-size: auto;
     font-family: "Comic Sans MS", Arial, sans-serif;
     color: #00FF00;
-    cursor: none; /* Hide default cursor */
+    cursor: none; /* Hide the default cursor to enhance immersion, replaced by a custom cursor */
 }
 
-/* Gradient Animation */
+/* Gradient animation used in certain elements (if needed) */
 @keyframes gradientAnimation {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
 
-/* Reset ul and li margins and paddings */
+/* Reset lists to remove default browser spacing */
 ul {
     margin: 0;
     padding: 0;
@@ -27,7 +44,7 @@ ul li {
     margin-bottom: 5px;
 }
 
-/* Links: Pink default, Yellow hover, very neon */
+/* Links: Start neon pink and glow to yellow on hover, embracing a bright, flashy aesthetic */
 a {
     color: #FF00FF;
     transition: color 0.5s ease;
@@ -35,10 +52,14 @@ a {
 
 a:hover {
     color: #FFFF00;
-    text-decoration: underline; /* Maintain underline on hover */
+    text-decoration: underline; /* Keep underline to maintain old-school link look */
 }
 
-/* Retro look for form elements */
+/* ===========================
+   Form Elements (Retro Look)
+   =========================== */
+
+/* Inputs and textareas: neon borders, black backgrounds, and bright green text for that hacker-chic look */
 input[type="text"], textarea {
     background-color: #000000;
     color: #00FF00;
@@ -50,7 +71,11 @@ input[type="text"], textarea {
     box-sizing: border-box;
 }
 
-/* Enhance the play-button with a retro neon look */
+/* ===========================
+   Buttons
+   =========================== */
+
+/* .play-button: a retro neon button that invites interaction with glow and scale effects */
 .play-button {
     background-color: #000000;
     color: #00FF00;
@@ -63,17 +88,19 @@ input[type="text"], textarea {
     text-shadow: 0 0 5px #FF00FF, 0 0 10px #FF00FF;
     border-radius: 4px;
 }
-
 .play-button:hover {
     box-shadow: 0 0 10px #FFFF00, 0 0 20px #FFFF00, 0 0 30px #FFFF00;
     transform: scale(0.95);
 }
-
 .play-button:active {
     transform: scale(0.95);
 }
 
-/* Rainbow text animation */
+/* ===========================
+   Animations and Effects
+   =========================== */
+
+/* Rainbow text animation for any .rainbow-text elements */
 @keyframes rainbow {
     0% { color: #FF00FF; }
     25% { color: #00FFFF; }
@@ -82,13 +109,17 @@ input[type="text"], textarea {
     100% { color: #00FF00; }
 }
 
-/* Neon glow pulse for ASCII dividers */
+/* Neon glow for ASCII dividers: alternating between pink and yellow glows */
 @keyframes neon-glow {
     0%, 100% { text-shadow: 0 0 5px #FF00FF, 0 0 10px #FF00FF, 0 0 15px #FF00FF; }
     50% { text-shadow: 0 0 10px #FFFF00, 0 0 20px #FFFF00, 0 0 30px #FFFF00; }
 }
 
-/* Style for Guestbook Entries */
+/* ===========================
+   Guestbook Entries Styling
+   =========================== */
+
+/* Guestbook entries: retro card-like items with neon borders and hover lift effect */
 #guestbook-entries {
     list-style-type: none;
     padding: 0;
@@ -102,55 +133,62 @@ input[type="text"], textarea {
     box-shadow: 0 0 10px #FF00FF, 0 0 20px #FF00FF;
     transition: transform 0.3s ease;
 }
-
 #guestbook-entries li:hover {
     transform: translateY(-5px);
 }
 
-/* Apply neon glow to ascii dividers */
+/* ASCII dividers get the neon-glow animation to mimic old banner lights */
 .ascii-divider {
     animation: neon-glow 2s infinite alternate;
     margin: 20px 0;
 }
 
-/* Rainbow text class if needed */
+/* Optional rainbow-text class for elements that should cycle through neon colors */
 .rainbow-text {
     animation: rainbow 5s linear infinite;
 }
 
-/* Custom Cursor */
+/* ===========================
+   Custom Cursor
+   =========================== */
+
+/* A custom neon cursor orb that follows the user's pointer for a unique interactive experience */
 .custom-cursor {
     position: fixed;
-    width: 20px; /* Adjusted for better responsiveness */
+    width: 20px;
     height: 20px;
-    background: linear-gradient(45deg, #FF00FF, #00FF00); /* Gradient neon colors */
-    border-radius: 50%; /* Circular cursor */
+    background: linear-gradient(45deg, #FF00FF, #00FF00);
+    border-radius: 50%;
     pointer-events: none;
-    z-index: 10001; /* Keeps it on top */
+    z-index: 10001;
     transition: width 0.2s ease, height 0.2s ease, background-color 0.2s ease;
     box-shadow: 0 0 20px rgba(255, 0, 255, 0.8), 0 0 30px rgba(0, 255, 0, 0.8);
 }
 
-/* Adjust cursor size and color on hover */
+/* Cursor changes size and color on hover over links and buttons to provide feedback */
 a:hover + .custom-cursor, .play-button:hover + .custom-cursor {
     width: 25px;
     height: 25px;
-    background-color: #FFFF00; /* Yellow when hovering over a link */
+    background-color: #FFFF00;
 }
-
 .play-button:hover + .custom-cursor {
     width: 30px;
     height: 30px;
     background: #FF00FF;
 }
 
-/* Make images responsive */
+/* Make images responsive while preserving retro look */
 img {
     max-width: 100%;
     height: auto;
 }
 
-/* Responsive Design */
+/* ===========================
+   Responsive Design Tweaks
+   ===========================
+   Even though this is a retro style, we still ensure usability
+   on modern devices by adjusting typography and layout on smaller screens.
+*/
 
 /* For tablets and smaller screens */
 @media (max-width: 900px) {
@@ -161,20 +199,14 @@ img {
     td {
         display: block;
         width: 100%;
-        border: none; /* Remove borders for cleaner stacking */
-    }
-
-    /* Center align all content */
-    td {
+        border: none;
         text-align: center;
     }
 
-    /* Adjust padding */
     table, td {
         padding: 10px;
     }
 
-    /* Adjust font sizes for better readability */
     body {
         font-size: 14px;
     }
@@ -192,7 +224,7 @@ img {
         font-size: 18px;
     }
 
-    /* Stack navigation links vertically */
+    /* Stack navigation links vertically for easier tap targets */
     ul {
         display: flex;
         flex-direction: column;
@@ -203,27 +235,28 @@ img {
         margin-bottom: 10px;
     }
 
-    /* Adjust ASCII dividers */
+    /* Adjust ASCII dividers for smaller screens */
     .ascii-divider {
         font-size: 12px;
     }
 
-    /* Adjust marquee font size */
+    /* Scale down marquee text */
     marquee {
         font-size: 12px;
     }
 
-    /* Make links and buttons touch-friendly */
+    /* Increase tap area of links and buttons */
     a, .play-button {
         padding: 10px 15px;
         font-size: 16px;
     }
-
-    
 }
 
+/* ===========================
+   Guestbook & Form Details
+   =========================== */
 
-/* Guestbook Header */
+/* Guestbook Header Section */
 .guestbook-header {
     display: flex;
     align-items: center;
@@ -241,7 +274,7 @@ img {
     text-shadow: 0 0 10px #FF00FF, 0 0 20px #FF00FF;
 }
 
-/* Guestbook Description */
+/* Guestbook Description Text */
 .guestbook-description {
     text-align: center;
     margin-bottom: 30px;
@@ -254,7 +287,7 @@ img {
     text-shadow: 0 0 5px #FF00FF;
 }
 
-/* Guestbook Form */
+/* Guestbook Form Layout */
 .guestbook-form-section {
     display: flex;
     justify-content: center;
@@ -282,23 +315,9 @@ img {
     font-size: 16px;
 }
 
-.form-input, .form-textarea {
-    width: 100%;
-    padding: 10px;
-    border: 2px solid #FF00FF;
-    background-color: #000000;
-    color: #00FF00;
-    border-radius: 5px;
-    font-family: "Comic Sans MS", sans-serif;
-    font-size: 14px;
-}
+/* Inputs and textareas styled above; consistent neon theme */
 
-.form-input:focus, .form-textarea:focus {
-    outline: none;
-    box-shadow: 0 0 10px #FFFF00;
-}
-
-/* Retro Button */
+/* Retro submit button is a variant of .play-button */
 .retro-button {
     background-color: #FF00FF;
     color: #00FF00;
@@ -311,17 +330,15 @@ img {
     text-shadow: 0 0 5px #FF00FF, 0 0 10px #FF00FF;
     border-radius: 5px;
 }
-
 .retro-button:hover {
     box-shadow: 0 0 10px #FFFF00, 0 0 20px #FFFF00, 0 0 30px #FFFF00;
     transform: scale(0.95);
 }
-
 .retro-button:active {
     transform: scale(0.95);
 }
 
-/* Divider */
+/* Divider line used throughout the layout to separate sections */
 .divider {
     border: none;
     height: 2px;
@@ -333,7 +350,7 @@ img {
     margin-right: auto;
 }
 
-/* Guestbook Entries */
+/* Guestbook Entries Container */
 .guestbook-entries-section {
     width: 80%;
     max-width: 600px;
@@ -359,14 +376,13 @@ img {
     font-family: "Comic Sans MS", sans-serif;
     color: #00FF00;
 }
-
 .entries-list li::before {
-    content: "👤"; /* User icon */
+    content: "👤"; /* Fun user icon for each entry */
     margin-right: 10px;
     font-size: 20px;
 }
 
-/* Loading Message */
+/* Loading message before entries are fetched */
 .loading-message {
     text-align: center;
     font-family: "Comic Sans MS", sans-serif;
@@ -374,9 +390,8 @@ img {
     text-shadow: 0 0 5px #FF00FF;
 }
 
-/* Responsive Enhancements */
+/* Responsive tweaks for the guestbook */
 @media (max-width: 900px) {
-    /* Adjust guestbook form width */
     .guestbook-form {
         width: 90%;
     }
@@ -413,22 +428,25 @@ img {
     }
 }
 
+/* Hit counter styling to emphasize its presence */
 #hit-counter {
     color: #FF00FF;
     text-shadow: 0 0 10px #00FFFF;
 }
+
 /* ===========================
-   Chatbot Icon Styles
+   Chatbot Icon and Window
    =========================== */
-   .chatbot-icon {
+
+/* Chatbot icon: neon-glowing ball to invite clicking for help/interactions */
+.chatbot-icon {
     position: fixed;
     bottom: 20px;
     right: 20px;
     cursor: pointer;
-    z-index: 10000; /* Ensure it stays on top */
+    z-index: 10000;
     animation: neon-glow 2s infinite alternate;
 }
-
 .chatbot-icon img {
     width: 50px;
     height: 50px;
@@ -438,9 +456,7 @@ img {
     box-shadow: 0 0 10px #FF00FF, 0 0 20px #FF00FF;
 }
 
-/* ===========================
-   Chatbot Window Styles
-   =========================== */
+/* Chatbot window: retro chat popup with vibrant borders and neon text */
 .chatbot-window {
     position: fixed;
     bottom: 80px;
@@ -451,14 +467,14 @@ img {
     border: 2px solid #FF00FF;
     border-radius: 10px;
     box-shadow: 0 0 20px #FF00FF, 0 0 30px #FF00FF;
-    display: none; /* Hidden by default */
+    display: none;
     flex-direction: column;
     z-index: 10000;
     font-family: "Comic Sans MS", sans-serif;
     color: #00FF00;
 }
 
-/* Chatbot Header */
+/* Chatbot header: pink background, icon and close button */
 .chatbot-header {
     display: flex;
     align-items: center;
@@ -468,14 +484,12 @@ img {
     border-top-right-radius: 8px;
     position: relative;
 }
-
 .chatbot-title {
     flex: 1;
     font-size: 18px;
     color: #000000;
     text-shadow: 0 0 5px #FF00FF;
 }
-
 .chatbot-close {
     font-size: 24px;
     color: #000000;
@@ -483,7 +497,7 @@ img {
     text-shadow: 0 0 5px #FF00FF;
 }
 
-/* Chatbot Messages */
+/* Chatbot message area: black background, neon borders */
 .chatbot-messages {
     height: 200px;
     overflow-y: auto;
@@ -492,18 +506,16 @@ img {
     border-bottom: 1px solid #FF00FF;
 }
 
+/* Messages: differentiate user vs. bot bubble colors */
 .message {
     margin-bottom: 10px;
 }
-
 .message.user {
     text-align: right;
 }
-
 .message.bot {
     text-align: left;
 }
-
 .message.user .text {
     background-color: #00FF00;
     color: #000000;
@@ -512,7 +524,6 @@ img {
     border-radius: 10px;
     font-family: "Comic Sans MS", sans-serif;
 }
-
 .message.bot .text {
     background-color: #FF00FF;
     color: #000000;
@@ -522,7 +533,7 @@ img {
     font-family: "Comic Sans MS", sans-serif;
 }
 
-/* Chatbot Form */
+/* Chatbot input form: consistent neon styling */
 .chatbot-form {
     display: flex;
     padding: 10px;
@@ -530,7 +541,6 @@ img {
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
 }
-
 #chatbot-input {
     flex: 1;
     padding: 5px;
@@ -540,52 +550,30 @@ img {
     color: #00FF00;
     font-family: "Comic Sans MS", sans-serif;
 }
-
 #chatbot-input:focus {
     outline: none;
     box-shadow: 0 0 10px #FFFF00;
 }
 
-.retro-button {
-    margin-left: 5px;
-    background-color: #FF00FF;
-    color: #00FF00;
-    border: 2px solid #00FFFF;
-    padding: 5px 10px;
-    cursor: pointer;
-    transition: box-shadow 0.5s ease, transform 0.2s ease;
-    text-shadow: 0 0 5px #FF00FF, 0 0 10px #FF00FF;
-    border-radius: 5px;
-}
+/* The .retro-button styles are already defined above */
 
-.retro-button:hover {
-    box-shadow: 0 0 10px #FFFF00, 0 0 20px #FFFF00, 0 0 30px #FFFF00;
-    transform: scale(1.05);
-}
-
-.retro-button:active {
-    transform: scale(0.95);
-}
-
-/* Typing Indicator */
+/* Typing indicator: a subtle blinking effect for authenticity */
 .typing-indicator {
     display: flex;
     align-items: center;
     color: #FFFF00;
     font-family: "Comic Sans MS", sans-serif;
 }
-
+@keyframes blink {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+}
 .typing-indicator::after {
     content: '...';
     animation: blink 1s infinite;
 }
 
-@keyframes blink {
-    0%, 100% { opacity: 0; }
-    50% { opacity: 1; }
-}
-
-/* Responsive Adjustments for Chatbot */
+/* Chatbot responsiveness for mobile screens */
 @media (max-width: 600px) {
     .chatbot-window {
         width: 90%;
@@ -611,12 +599,15 @@ img {
 
 /* ===========================
    Notification Styles
-   =========================== */
-   #notification-container {
+   ===========================
+   Notifications appear on top with neon borders, used for confirmations and errors.
+*/
+
+#notification-container {
     position: fixed;
     top: 20px;
     right: 20px;
-    z-index: 10002; /* Higher than chatbot and other elements */
+    z-index: 10002; /* Above chatbot and other elements */
 }
 
 .notification {
@@ -633,6 +624,7 @@ img {
     animation: fadeIn 0.5s ease-in-out;
 }
 
+/* Success notification in green glow, error in red glow */
 .notification.success {
     border-color: #00FF00;
     background-color: rgba(0, 0, 0, 0.9);
@@ -673,4 +665,209 @@ img {
 @keyframes fadeOut {
     from { opacity: 1; transform: translateY(0); }
     to { opacity: 0; transform: translateY(-20px); }
+}
+
+/* ===========================
+   About Page Specific Styles
+   ===========================
+   Additional sections unique to About page: a retro-themed info box, 
+   skill categories, progress bars for education, etc.
+*/
+
+.about-me {
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border: 2px solid #FF00FF;
+    border-radius: 10px;
+    margin-bottom: 40px;
+}
+
+.about-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.about-gif {
+    margin-right: 15px;
+    animation: bounce 2s infinite;
+}
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.about-title {
+    font-size: 36px;
+    color: #FFFF00;
+    text-shadow: 0 0 10px #FF00FF, 0 0 20px #FF00FF;
+}
+
+.personal-info p {
+    font-size: 18px;
+    margin: 5px 0;
+    color: #00FF00;
+    text-shadow: 0 0 5px #FF00FF;
+}
+
+/* Skills section arranged in a grid-like fashion. Each category is a "skill-category" box */
+.skills-section {
+    margin-top: 30px;
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.skill-category {
+    width: 48%;
+    margin-bottom: 20px;
+}
+
+.skill-category h2 {
+    font-size: 24px;
+    color: #FFFF00;
+    text-shadow: 0 0 5px #FF00FF;
+    margin-bottom: 10px;
+}
+
+.skill-category p {
+    font-size: 16px;
+    color: #00FF00;
+    text-shadow: 0 0 3px #FF00FF;
+}
+
+/* Honors and experience arranged side-by-side */
+.honors-experience {
+    margin-top: 40px;
+}
+
+.experience {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.work-experience, .honors {
+    width: 48%;
+    margin-bottom: 20px;
+}
+
+.work-experience h2, .honors h2 {
+    font-size: 24px;
+    color: #FFFF00;
+    text-shadow: 0 0 5px #FF00FF;
+    margin-bottom: 10px;
+}
+
+.work-experience ul, .honors ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.work-experience li, .honors li {
+    font-size: 16px;
+    color: #00FF00;
+    text-shadow: 0 0 3px #FF00FF;
+    margin-bottom: 8px;
+}
+
+/* Marquee message for motivation */
+.motivational-marquee {
+    margin-top: 30px;
+    font-size: 20px;
+    color: #00FFFF;
+    font-family: "Comic Sans MS", sans-serif;
+    text-shadow: 0 0 5px #FF00FF;
+}
+
+/* Additional features block for about page: includes progress bars and fun fact */
+.additional-features {
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 2px solid #FF00FF;
+    border-radius: 10px;
+    margin-bottom: 40px;
+}
+
+/* Education progress bars: a nod to old sites that displayed progress or stats visually */
+.progress-container h3 {
+    font-size: 24px;
+    color: #FFFF00;
+    text-shadow: 0 0 5px #FF00FF;
+    margin-bottom: 10px;
+}
+
+.progress-bar {
+    background-color: #000000;
+    border: 2px solid #FF00FF;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    position: relative;
+    height: 25px;
+    width: 100%;
+}
+.progress-fill {
+    background-color: #00FF00;
+    height: 100%;
+    border-radius: 5px;
+    text-align: center;
+    color: #000000;
+    font-weight: bold;
+    animation: fillProgress 2s ease-in-out forwards;
+}
+@keyframes fillProgress {
+    from { width: 0%; }
+    to { width: 100%; }
+}
+
+/* Fun-fact section to add personal flair */
+.fun-fact {
+    margin-top: 30px;
+    font-size: 18px;
+    color: #00FF00;
+    text-shadow: 0 0 3px #FF00FF;
+}
+.fun-fact h3 {
+    font-size: 22px;
+    color: #FFFF00;
+    text-shadow: 0 0 5px #FF00FF;
+    margin-bottom: 10px;
+}
+
+/* Responsive adjustments for About page to ensure readability on smaller screens */
+@media (max-width: 900px) {
+    .skill-category {
+        width: 100%;
+    }
+    
+    .work-experience, .honors {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .about-title {
+        font-size: 28px;
+    }
+    
+    .skill-category h2, .honors h2, .work-experience h2 {
+        font-size: 20px;
+    }
+    
+    .skills, .experience {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .skills-section, .honors-experience, .additional-features {
+        padding: 10px;
+    }
+    
+    .motivational-marquee {
+        font-size: 16px;
+    }
 }

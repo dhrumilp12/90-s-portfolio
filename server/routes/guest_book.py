@@ -4,7 +4,7 @@
 Guestbook route module.
 Handles GET and POST requests for the guestbook feature.
 """
-
+# Import necessary modules
 import re
 from flask import Blueprint, request, jsonify
 from services.mongodb import MongoDBClient
@@ -22,6 +22,7 @@ db_client = MongoDBClient.get_client()
 db = db_client[MongoDBClient.get_db_name()]
 guestbook_collection = db['guestbook']
 
+# Define a basic sanitization function
 def sanitize_input(text):
     """
     Basic sanitization to prevent XSS.
@@ -29,6 +30,7 @@ def sanitize_input(text):
     """
     return re.sub(r'[<>]', '', text)
 
+# Define routes
 @guestbook_bp.route('/guestbook', methods=['GET', 'POST'])
 def handle_guestbook():
     """

@@ -1,3 +1,4 @@
+// This script is used to create a custom cursor and cursor trail animation for the website. The custom cursor follows the mouse movement and changes its position accordingly. When the user clicks on the page, the cursor displays a click animation. The cursor trail animation creates a retro effect by displaying small circles that follow the cursor movement and fade out after a short period of time.
 document.addEventListener('DOMContentLoaded', function() {
     const cursor = document.querySelector('.custom-cursor');
 
