@@ -31,6 +31,15 @@ def guestbook():
         return redirect(url_for('guestbook'))
     return render_template('guestbook.html', entries=guestbook_entries, now=datetime.utcnow)
 
+@app.route('/secret-hideout')
+def secret_hideout():
+    return render_template('secret.html')
+
+@app.route('/game')
+def game():
+    return render_template('game.html')
+
+
 # Run the application
 if __name__ == '__main__':
     HOST = os.getenv("FLASK_RUN_HOST", "127.0.0.1")

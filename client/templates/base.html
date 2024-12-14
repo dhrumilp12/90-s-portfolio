@@ -16,6 +16,8 @@
     <script src="{{ url_for('static', filename='js/cursor.js') }}" defer></script>
     <script src="{{ url_for('static', filename='js/guestbook.js') }}" defer></script>
     <script src="{{ url_for('static', filename='js/chatbot.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='js/easteregg.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='js/game.js') }}"></script>
 </head>
 <body>
     <div class="custom-cursor"></div>
@@ -43,6 +45,7 @@
                     <li><a href="{{ url_for('home') }}"><font face="Comic Sans MS">Home</font></a></li>
                     <li><a href="{{ url_for('about') }}"><font face="Comic Sans MS">About Me</font></a></li>
                     <li><a href="{{ url_for('guestbook') }}"><font face="Comic Sans MS">Guestbook</font></a></li>
+                    <li><a href="{{ url_for('game') }}"><font face="Comic Sans MS">Play Game</font></a></li>
                 </ul>
                 <pre class="ascii-divider" align="center">
 ===============================
@@ -149,6 +152,12 @@
     <div style="display: none;">
         <audio id="send-sound" data-send-sound="{{ url_for('static', filename='audio/send.mp3') }}"></audio>
         <audio id="receive-sound" data-receive-sound="{{ url_for('static', filename='audio/receive.mp3') }}"></audio>
+    </div>
+    <!-- Hidden Easter Egg Link (very subtle!) -->
+    <div style="position:absolute; top:-9999px; left:-9999px;">
+        <a href="{{ url_for('secret_hideout') }}">
+            <img src="{{ url_for('static', filename='images/small_gif.gif') }}" width="1" height="1" alt="." />
+        </a>
     </div>
 
 </body>

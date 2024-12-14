@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block content %}
+<div style="text-align:center; margin-top:50px;">
+    <h1 style="font-family:'Comic Sans MS'; color:#FFFF00; text-shadow:0 0 10px #FF00FF;">Whack-a-Runner!</h1>
+    <p style="font-family:'Comic Sans MS'; color:#00FF00;">
+      Hit as many <img src="{{ url_for('static', filename='images/confetti.gif') }}" alt="Runner" width="40" style="vertical-align:middle;"> as you can in 30 seconds!
+    </p>
+    <div id="game-area" style="
+        position:relative; 
+        width:300px; 
+        height:300px; 
+        margin:0 auto; 
+        border:3px solid #FF00FF; 
+        border-radius:10px; 
+        box-shadow:0 0 10px #FF00FF,0 0 20px #FF00FF;
+    ">
+      <!-- The runner will appear here -->
+    </div>
+    <p style="font-family:'Comic Sans MS'; color:#FF00FF; margin-top:10px;">
+      Score: <span id="score">0</span> | Time Left: <span id="time-left">30</span>s
+    </p>
+    <button class="play-button" id="start-game-button">Start Game</button>
+</div>
+
+<!-- End Game Modal -->
+<div id="end-game-modal" style="
+    display:none; 
+    position:fixed; 
+    top:50%; 
+    left:50%; 
+    transform:translate(-50%, -50%); 
+    background-color:rgba(0,0,0,0.9); 
+    border:3px solid #FF00FF; 
+    border-radius:10px; 
+    box-shadow:0 0 20px #FF00FF; 
+    padding:20px; 
+    z-index:10001; 
+    text-align:center;
+">
+    <h2 style="font-family:'Comic Sans MS'; color:#FFFF00; margin-bottom:10px;">
+        Time's Up!
+    </h2>
+    <p style="font-family:'Comic Sans MS'; color:#00FF00; margin-bottom:10px;">
+        Your Score: <span id="final-score"></span><br>
+        Best Score: <span id="best-score"></span>
+    </p>
+    <button class="retro-button" id="close-modal-button">Close</button>
+</div>
+{% endblock %}
