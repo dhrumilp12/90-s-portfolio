@@ -17,7 +17,7 @@
     <script src="{{ url_for('static', filename='js/guestbook.js') }}" defer></script>
     <script src="{{ url_for('static', filename='js/chatbot.js') }}" defer></script>
     <script src="{{ url_for('static', filename='js/easteregg.js') }}" defer></script>
-    <script src="{{ url_for('static', filename='js/game.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/musicToggle.js') }}" defer></script>
 </head>
 <body>
     <div class="custom-cursor"></div>
@@ -77,15 +77,17 @@
             <td width="60%">
                 {% block content %}{% endblock %}
 
-                <!-- Music Play Button -->
-                <div style="text-align:center;">
-                    <div class="play-button blink" onclick="document.getElementById('bg-audio').play();">
-                        <p align="center" style="display: flex; align-items: center; justify-content: center;">
-                            <img src="{{ url_for('static', filename='images/gplay.gif') }}" alt="gplay" width="50" style="margin-right: 10px;">
-                            <font face="Comic Sans MS">Play Tunes!</font>
-                        </p>
-                    </div>
+                
+                <!-- Music Toggle Button -->
+            <div style="text-align:center;">
+                <div class="play-button blink" id="music-toggle-button">
+                    <p align="center" style="display: flex; align-items: center; justify-content: center;">
+                        <img src="{{ url_for('static', filename='images/gplay.gif') }}" alt="gplay" width="50" style="margin-right: 10px;" id="music-btn-icon">
+                        <font face="Comic Sans MS" id="music-btn-text">Play Tunes!</font>
+                    </p>
                 </div>
+            </div>
+
             </td>
             <td width="20%" align="center" style="border-left: 3px dotted #FF00FF; ">
                 <marquee behavior="scroll" direction="right" scrollamount="8">
