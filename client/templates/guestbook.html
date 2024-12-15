@@ -7,17 +7,17 @@
      Encourages visitors to leave a message, simulating old personal site interactions.
      Features a neon form, animated GIFs, and displays all previous entries.
 ========================= -->
-
+    
 <!-- Guestbook Header -->
 <header class="guestbook-header">
     <img src="{{ url_for('static', filename='images/guestbk.gif') }}" alt="Guestbook GIF" class="guestbook-gif">
-    <h1 class="guestbook-title">Guestbook</h1>
+    <h1 class="guestbook-title" data-translate>Guestbook</h1>
 </header>
 
 <!-- Guestbook Description -->
 <section class="guestbook-description">
     <p>
-        <span class="retro-text">Leave a message and let me know you stopped by!</span>
+        <span class="retro-text" data-translate>Leave a message and let me know you stopped by!</span>
     </p>
 </section>
 
@@ -25,15 +25,15 @@
 <section class="guestbook-form-section">
     <form id="guestbook-form" class="guestbook-form">
         <div class="form-group">
-            <label for="name" class="form-label">Your Name:</label>
-            <input type="text" id="name" name="name" placeholder="e.g. 'CoolSurfer123'" required class="form-input">
+            <label for="name" class="form-label" data-translate>Your Name:</label>
+            <input type="text" id="name" name="name" placeholder="e.g. 'CoolSurfer123'" required class="form-input" data-translate-placeholder>
         </div>
         <div class="form-group">
-            <label for="message" class="form-label">Your Message:</label>
-            <textarea id="message" name="message" rows="5" cols="40" placeholder="Your radical message here..." required class="form-textarea"></textarea>
+            <label for="message" class="form-label" data-translate>Your Message:</label>
+            <textarea id="message" name="message" rows="5" cols="40" placeholder="Your radical message here..." required class="form-textarea" data-translate-placeholder></textarea>
         </div>
         <div class="form-group">
-            <button type="submit" class="play-button retro-button">Sign Guestbook</button>
+            <button type="submit" class="play-button retro-button" data-translate>Sign Guestbook</button>
         </div>
     </form>
 </section>
@@ -43,11 +43,10 @@
 
 <!-- Previous Entries -->
 <section class="guestbook-entries-section">
-    <h3 class="entries-title retro-text">Previous Entries:</h3>
+    <h3 class="entries-title retro-text" data-translate>Previous Entries:</h3>
     <ul id="guestbook-entries" class="entries-list">
-        <li class="loading-message"><span class="retro-text">Loading entries...</span></li>
+        <li class="loading-message"><span class="retro-text" data-translate>Loading entries...</span></li>
     </ul>
 </section>
-
 
 {% endblock %}

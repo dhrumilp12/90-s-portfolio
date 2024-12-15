@@ -5,10 +5,11 @@
      -------------------------
      A simple Whack-a-Mole style game where players click on runners to score points.
      The game features a 30-second timer, score counter, and a modal to display the final score.
- ========================= -->
+========================= -->
+
 <div style="text-align:center; margin-top:50px;">
-    <h1 style="font-family:'Comic Sans MS'; color:#FFFF00; text-shadow:0 0 10px #FF00FF;">Whack-a-Runner!</h1>
-    <p style="font-family:'Comic Sans MS'; color:#00FF00;">
+    <h1 style="font-family:'Comic Sans MS'; color:#FFFF00; text-shadow:0 0 10px #FF00FF;" data-translate>Whack-a-Runner!</h1>
+    <p style="font-family:'Comic Sans MS'; color:#00FF00;" data-translate>
       Hit as many <img src="{{ url_for('static', filename='images/confetti.gif') }}" alt="Runner" width="40" style="vertical-align:middle;"> as you can in 30 seconds!
     </p>
     <div id="game-area" style="
@@ -23,11 +24,12 @@
       <!-- The runner will appear here -->
     </div>
     <p style="font-family:'Comic Sans MS'; color:#FF00FF; margin-top:10px;">
-      Score: <span id="score">0</span> | Time Left: <span id="time-left">30</span>s
+      <span data-translate>Score:</span> <span id="score">0</span> | 
+      <span data-translate>Time Left:</span> <span id="time-left">30</span><span data-translate>s</span>
     </p>
-    <button class="play-button" id="start-game-button">Start Game</button>
-    <button class="play-button" id="pause-game-button" disabled>Pause Game</button>
-    <button class="play-button" id="stop-game-button" disabled>Stop Game</button>
+    <button class="play-button" id="start-game-button" data-translate>Start Game</button>
+    <button class="play-button" id="pause-game-button" disabled data-translate>Pause Game</button>
+    <button class="play-button" id="stop-game-button" disabled data-translate>Stop Game</button>
 </div>
 
 <!-- End Game Modal -->
@@ -45,17 +47,15 @@
     z-index:10001; 
     text-align:center;
 ">
-    <h2 style="font-family:'Comic Sans MS'; color:#FFFF00; margin-bottom:10px;">
-        Time's Up!
-    </h2>
+    <h2 style="font-family:'Comic Sans MS'; color:#FFFF00; margin-bottom:10px;" data-translate>Time's Up!</h2>
     <p style="font-family:'Comic Sans MS'; color:#00FF00; margin-bottom:10px;">
-        Your Score: <span id="final-score"></span><br>
-        Best Score: <span id="best-score"></span>
+        <span data-translate>Your Score:</span> <span id="final-score"></span><br>
+        <span data-translate>Best Score:</span> <span id="best-score"></span>
     </p>
-    <button class="retro-button" id="close-modal-button">Close</button>
+    <button class="retro-button" id="close-modal-button" data-translate>Close</button>
 </div>
+
 {% block scripts %}
 <script src="{{ url_for('static', filename='js/game.js') }}" defer></script>
 {% endblock %}
 {% endblock %}
-

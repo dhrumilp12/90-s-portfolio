@@ -11,16 +11,19 @@
     <meta name="theme-color" content="#ffffff">
 
     <meta charset="UTF-8" />
-    <title>Dhrumilkumar Patel's Retro 90's Web Corner</title>
+    <title data-translate>Dhrumilkumar Patel's Retro 90's Web Corner</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <script src="{{ url_for('static', filename='js/cursor.js') }}" defer></script>
     <script src="{{ url_for('static', filename='js/guestbook.js') }}" defer></script>
     <script src="{{ url_for('static', filename='js/chatbot.js') }}" defer></script>
     <script src="{{ url_for('static', filename='js/easteregg.js') }}" defer></script>
     <script src="{{ url_for('static', filename='js/musicToggle.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='js/translator.js') }}" defer></script>
+
 </head>
 <body>
     <div class="custom-cursor"></div>
+    
     <!-- Hidden audio element; user can choose to play -->
     <audio id="bg-audio" src="{{ url_for('static', filename='audio/theme.mp3') }}" loop></audio>
 
@@ -28,7 +31,7 @@
         <tr>
             <td colspan="3" align="center" style="border-bottom: 3px dotted #FF00FF;">
                 <marquee behavior="alternate" scrollamount="5" style="font-size:24px; color:#00FF00;">
-                    <font face="Comic Sans MS" class="rainbow-text">Welcome to Dhrumilkumar Patel's Retro 90's Web Corner!</font>
+                    <font face="Comic Sans MS" class="rainbow-text" data-translate>Welcome to Dhrumilkumar Patel's Retro 90's Web Corner!</font>
                 </marquee>
             </td>
         </tr>
@@ -39,23 +42,24 @@
                 </marquee>
                 <p align="center" style="display: flex; align-items: center; justify-content: center; margin-top:60px;">
                     <img src="{{ url_for('static', filename='images/aniglobe.gif') }}" alt="Spinning Globe" width="50" style="margin-right: 10px;">
-                    <font face="Comic Sans MS" color="#FFFF00" size="4">Navig8!</font>
+                    <font face="Comic Sans MS" color="#FFFF00" size="4" data-translate>Navig8!</font>
                 </p>
-                <ul style="list-style-type: none; padding:0;">
-                    <li><a href="{{ url_for('home') }}"><font face="Comic Sans MS">Home</font></a></li>
-                    <li><a href="{{ url_for('about') }}"><font face="Comic Sans MS">About Me</font></a></li>
-                    <li><a href="{{ url_for('guestbook') }}"><font face="Comic Sans MS">Guestbook</font></a></li>
-                    <li><a href="{{ url_for('game') }}"><font face="Comic Sans MS">Play Game</font></a></li>
+                <ul style="list-style-type: none; padding:0;" >
+                    <li><a href="{{ url_for('home') }}"><font face="Comic Sans MS" data-translate>Home</font></a></li>
+                    <li><a href="{{ url_for('about') }}"><font face="Comic Sans MS" data-translate>About Me</font></a></li>
+                    <li><a href="{{ url_for('guestbook') }}"><font face="Comic Sans MS" data-translate>Guestbook</font></a></li>
+                    <li><a href="{{ url_for('game') }}"><font face="Comic Sans MS" data-translate>Play Game</font></a></li>
                 </ul>
-                <pre class="ascii-divider" align="center">
+                <hr>
+                <pre class="ascii-divider" align="center" data-translate>
 ===============================
-|| <img src="{{ url_for('static', filename='images/old_school.gif') }}" alt="Old School GIF" width="30" style="margin-right: 10px; vertical-align: middle;">   Old-School Links! ||
+||   Old-School Links!       ||
 ===============================
                 </pre>
-                <p><font face="Comic Sans MS" size="2">[ <a href="https://neocities.org/" target="_blank">Neocities</a> ] [ <a href="https://www.paulgraham.com/index.html" target="_blank">Paul's Retro Site</a> ]</font></p>
+                <p><font face="Comic Sans MS" size="2" >[ <a href="https://neocities.org/" target="_blank" data-translate>Neocities</a> ] [ <a href="https://www.paulgraham.com/index.html" target="_blank" data-translate>Paul's Retro Site</a> ]</font></p>
 
-                
-<pre class="ascii-divider" align="center">
+                <hr>       
+<pre class="ascii-divider" align="center" data-translate>
 ====================================
 ||        C O O L   S T U F F      ||
 ====================================
@@ -83,7 +87,7 @@
                 <div class="play-button blink" id="music-toggle-button">
                     <p align="center" style="display: flex; align-items: center; justify-content: center;">
                         <img src="{{ url_for('static', filename='images/gplay.gif') }}" alt="gplay" width="50" style="margin-right: 10px;" id="music-btn-icon">
-                        <font face="Comic Sans MS" id="music-btn-text">Play Tunes!</font>
+                        <font face="Comic Sans MS" id="music-btn-text" data-translate>Play Tunes!</font>
                     </p>
                 </div>
             </div>
@@ -95,18 +99,72 @@
                 </marquee>
                 <p align="center" style="margin-top:60px;">
                     <img src="{{ url_for('static', filename='images/mailme.gif') }}" alt="Mailme GIF">
-                    <font face="Comic Sans MS" color="#FFFF00" size="4">Contact</font>
+                    <font face="Comic Sans MS" color="#FFFF00" size="4" data-translate>Contact</font>
                 </p>
-                <p><font face="Comic Sans MS">Email:</font></p>
-                <p><a href="mailto:dhrumil1612@icloud.com"><font face="Comic Sans MS">dhrumil1612@icloud.com</font></a></p>
+                <p><font face="Comic Sans MS" data-translate>Email:</font></p>
+                <p><a href="mailto:dhrumil1612@icloud.com"><font face="Comic Sans MS" data-translate>dhrumil1612@icloud.com</font></a></p>
                 <hr>
-                <p><font face="Comic Sans MS">Find Me:</font></p>
-                <p><font face="Comic Sans MS" size="2">[ <a href="https://www.linkedin.com/in/dhrumil-patel2002" target="_blank">LinkedIn</a> ] [ <a href="https://github.com/dhrumilp12" target="_blank">GitHub</a> ] [ <a href="https://devpost.com/dhrumil1612" target="_blank">DevPost</a> ]<br>[ <a href="https://dhrumil-patel.onrender.com" target="_blank">Portfolio</a> ] [ <a href="https://learn.microsoft.com/en-us/users/dhrumilkumarpatel-1225/" target="_blank">Microsoft Learn</a> ]</font></p>
+                <p><font face="Comic Sans MS" data-translate>Find Me:</font></p>
+                <p><font face="Comic Sans MS" size="2" >[ <a href="https://www.linkedin.com/in/dhrumil-patel2002" target="_blank" data-translate>LinkedIn</a> ] [ <a href="https://github.com/dhrumilp12" target="_blank" data-translate>GitHub</a> ] [ <a href="https://devpost.com/dhrumil1612" target="_blank" data-translate>DevPost</a> ]<br>[ <a href="https://dhrumil-patel.onrender.com" target="_blank" data-translate>Portfolio</a> ] [ <a href="https://learn.microsoft.com/en-us/users/dhrumilkumarpatel-1225/" target="_blank" data-translate>Microsoft Learn</a> ]</font></p>
+                <!-- ASCII Divider for Language Section -->
+<pre class="ascii-divider" align="center" data-translate>
+====================================
+||          L A N G U A G E S       ||
+====================================
+</pre>
+    <hr>
+    <!-- Language Selector Container -->
+    <div style="
+        text-align:center;
+        background-color: rgba(0,0,0,0.8);
+        border: 2px solid #FF00FF;
+        border-radius: 10px;
+        box-shadow:0 0 20px #FF00FF,0 0 30px #FF00FF;
+        width: 220px;
+        margin: 0 auto 20px auto;
+        padding: 10px;
+        font-family:'Comic Sans MS', Arial, sans-serif;
+    ">
+    
+        <label for="language-select" style="
+            color: #FFFF00; 
+            font-size:16px; 
+            text-shadow:0 0 5px #FF00FF;
+            display: block;
+            margin-bottom: 8px;
+        " data-translate>
+            Language:
+        </label>
+        <select id="language-select" style="
+            font-family:'Comic Sans MS', Arial, sans-serif;
+            color:#00FF00;
+            background-color:#000000;
+            border:2px solid #FF00FF;
+            border-radius:5px;
+            padding:5px;
+            text-shadow:0 0 3px #FF00FF;
+            box-shadow:0 0 10px #FF00FF;
+            width: 100%;
+        ">
+            <option value="en" >English</option>
+            <option value="es" >Español (Spanish)</option>
+            <option value="fr" >Français (French)</option>
+            <option value="de" >Deutsch (German)</option>
+            <option value="it" >Italiano (Italian)</option>
+            <option value="zh" >中文 (Chinese)</option>
+            <option value="ja" >日本語 (Japanese)</option>
+            <option value="ar" >العربية (Arabic)</option>
+            <option value="hi" >हिंदी (Hindi)</option>
+            <option value="ru" >Русский (Russian)</option>
+            <option value="hy" >Հայերեն (Armenian)</option>
+        </select>
+    </div>
+    
                 <hr>
-                <p><font face="Comic Sans MS">Thanks for visiting!</font></p>
-                <pre class="ascii-divider" align="center">
+                <p><font face="Comic Sans MS" data-translate>Thanks for visiting!</font></p>
+                <pre class="ascii-divider" align="center" data-translate>
 ===========================
-|| <img src="{{ url_for('static', filename='images/construction.gif') }}" alt="Construction GIF" width="30" style="margin-right: 10px; vertical-align: middle;"> Under Const. ||
+||  Under Const.          ||
 ===========================
 || Pardon our dust!       ||
 || Improvements incoming! ||
@@ -121,7 +179,7 @@
         </tr>
         <tr>
             <td colspan="3" align="center" style="border-top: 3px dotted #FF00FF;">
-                <pre class="ascii-divider" style="display:inline-block; text-align:center; margin:0;">
+                <pre class="ascii-divider" style="display:inline-block; text-align:center; margin:0;" data-translate>
             ***********************
             * © 2024 Dhrumilkumar Patel *
             *       All rights reserved.    *
@@ -146,23 +204,23 @@
     <div class="chatbot-window" id="chatbot-window">
         <div class="chatbot-header">
             <img src="{{ url_for('static', filename='images/chatbot_icon.gif') }}" alt="Chatbot Icon" width="30">
-            <span class="chatbot-title">Retro Chatbot</span>
-            <span class="chatbot-close" id="chatbot-close">&times;</span>
+            <span class="chatbot-title" data-translate>Retro Chatbot</span>
+            <span class="chatbot-close" id="chatbot-close" data-translate>&times;</span>
         </div>
         <div class="chatbot-messages" id="chatbot-messages">
             <!-- Messages will appear here -->
         </div>
         <form id="chatbot-form" class="chatbot-form">
-            <input type="text" id="chatbot-input" placeholder="Ask me anything about me!" required>
-            <button type="submit" class="retro-button">Send</button>
+            <input type="text" id="chatbot-input" placeholder="Ask me anything about me!" required data-translate-placeholder>
+            <button type="submit" class="retro-button" data-translate>Send</button>
         </form>
     </div>
 
     <!-- Notification Container -->
     <div id="notification-container">
         <div id="notification" class="notification hidden">
-            <span id="notification-message"></span>
-            <span id="notification-close" class="notification-close">&times;</span>
+            <span id="notification-message" data-translate></span>
+            <span id="notification-close" class="notification-close" data-translate>&times;</span>
         </div>
     </div>
     

@@ -7,6 +7,7 @@ Initialize Flask blueprints.
 from flask import Flask
 from .guest_book import guestbook_bp
 from .chatbot import chatbot_bp
+from .translator import translator_bp
 
 # Define a function to register all blueprints
 def register_blueprints(app):
@@ -15,3 +16,4 @@ def register_blueprints(app):
     """
     app.register_blueprint(guestbook_bp)
     app.register_blueprint(chatbot_bp)
+    app.register_blueprint(translator_bp)
