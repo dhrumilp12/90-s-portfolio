@@ -42,22 +42,6 @@ This site is my personal digital hideout. It includes:
 - **Chatbot (AI Integration):** A GPT-like model from Google Gemini is integrated, responding to user prompts about my personal info. This blends personal narrative with modern tech, just hidden under a veneer of retro design.
 - **Hosting:** GitHub Pages for frontend (if static-only) and a simple Python backend on a service like Render/Heroku (if dynamic content and chatbot queries are needed).
 
-## How It Meets the Criteria
-**Theme - "Now, It’s Personal":**
-- This project is all about me—my journey, my hobbies, my favorite elements of retro design. It’s a true personal homepage that teleports you back to a simpler, more personal time on the web.
-
-**The Code:**
-- The code is thoroughly commented, making it easy to read and skim. It embraces 90s-era styles like inline styling, table-based layouts, marquee text, and neon-blink aesthetics.
-- Documentation is sprinkled throughout for clarity, and the directory structure is straightforward.
-
-**UI/UX:**
-- Everything screams "90s web": pixelated images, bright clashing colors, Comic Sans, marquee text, GIFs, ASCII dividers, and custom cursors.
-- User interaction remains friendly. It’s easy to navigate: a left-hand menu, a guestbook form, a simple game, and simple instructions. The chatbot icon is easy to locate and interact with.
-
-**Creativity:**
-- Combines retro web design concepts with unexpected modern tech: a hidden AI chatbot, Easter eggs, and an interactive game.
-- Encourages user interaction: sign the guestbook, play the game, chat with the AI.
-- Fun factor is high—visitors feel they’ve discovered a secret pocket of the past, preserved and yet evolving with modern twists.
 
 **Fun & Engagement:**
 - Gamification via the mini-game.
@@ -65,10 +49,5 @@ This site is my personal digital hideout. It includes:
 - Surprise and delight through the Konami code Easter egg.
 - Personalized AI interactions that make learning about me more engaging.
 
----
 
-## Conclusion
-**Dhrumilkumar's Retro 90s Web Corner** is a joyful fusion of personal creativity and old-school nostalgia, all with the unexpected twist of modern AI-driven interactions. It’s personal, it’s fun, and it’s a tribute to the homebrew spirit that made the early internet so special. Through this project, I not only share who I am and what I’ve done, but I also recreate the feeling of stumbling into someone’s personalized web haven, making each visitor feel like they’ve discovered a secret world—my personal corner of the web.
-
-*Thank you for visiting, exploring, playing, and leaving your mark on my guestbook. Let’s embrace the retro vibes and remember a time when the web was truly personal.*
 
