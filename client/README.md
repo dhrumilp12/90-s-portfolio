@@ -16,10 +16,11 @@ Before you begin, ensure you have the following installed on your machine:
 
 ## Project Setup
 
-1. **Clone the repository**:
+1. **Clone the repository and change dir**:
    ```
-   ```bash
    git clone https://github.com/dhrumilp12/90-s-portfolio.git
+
+   ```
    ```
    cd client
    ```
